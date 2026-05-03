@@ -3,78 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChemLab — Мир химии</title>
+  <meta name="theme-color" content="#060810">
+  <title>ChemLab — Химия и Биология</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Фон с молекулами -->
+  <!-- Фоновые молекулы -->
   <div class="bg-canvas">
-    <svg class="molecule mol-1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="30" r="12" fill="#00e5ff22" stroke="#00e5ff" stroke-width="1.5"/>
-      <circle cx="30" cy="80" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
-      <circle cx="90" cy="80" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
-      <line x1="60" y1="42" x2="38" y2="72" stroke="#00e5ff55" stroke-width="1.5"/>
-      <line x1="60" y1="42" x2="82" y2="72" stroke="#00e5ff55" stroke-width="1.5"/>
-      <line x1="38" y1="80" x2="82" y2="80" stroke="#00e5ff55" stroke-width="1.5"/>
-      <text x="54" y="34" fill="#00e5ff" font-size="8" font-family="JetBrains Mono">O</text>
-      <text x="25" y="84" fill="#00ff88" font-size="7" font-family="JetBrains Mono">H</text>
-      <text x="87" y="84" fill="#00ff88" font-size="7" font-family="JetBrains Mono">H</text>
-    </svg>
-    <svg class="molecule mol-2" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="30" cy="50" r="14" fill="#a78bfa22" stroke="#a78bfa" stroke-width="1.5"/>
-      <circle cx="80" cy="50" r="10" fill="#a78bfa22" stroke="#a78bfa" stroke-width="1.5"/>
-      <circle cx="120" cy="30" r="8" fill="#f9731622" stroke="#f97316" stroke-width="1.5"/>
-      <circle cx="120" cy="70" r="8" fill="#f9731622" stroke="#f97316" stroke-width="1.5"/>
-      <line x1="44" y1="50" x2="70" y2="50" stroke="#a78bfa55" stroke-width="2"/>
-      <line x1="44" y1="46" x2="70" y2="46" stroke="#a78bfa55" stroke-width="1"/>
-      <line x1="90" y1="42" x2="112" y2="34" stroke="#a78bfa55" stroke-width="1.5"/>
-      <line x1="90" y1="58" x2="112" y2="66" stroke="#a78bfa55" stroke-width="1.5"/>
-      <text x="22" y="54" fill="#a78bfa" font-size="9" font-family="JetBrains Mono">Na</text>
-      <text x="74" y="54" fill="#a78bfa" font-size="8" font-family="JetBrains Mono">Cl</text>
-      <text x="115" y="34" fill="#f97316" font-size="7" font-family="JetBrains Mono">e</text>
-      <text x="115" y="74" fill="#f97316" font-size="7" font-family="JetBrains Mono">e</text>
-    </svg>
-    <svg class="molecule mol-3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="16" fill="#00e5ff11" stroke="#00e5ff" stroke-width="1.5"/>
-      <circle cx="50" cy="15" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
-      <circle cx="82" cy="68" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
-      <circle cx="18" cy="68" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
-      <line x1="50" y1="34" x2="50" y2="23" stroke="#00e5ff55" stroke-width="1.5"/>
-      <line x1="62" y1="60" x2="74" y2="63" stroke="#00e5ff55" stroke-width="1.5"/>
-      <line x1="38" y1="60" x2="26" y2="63" stroke="#00e5ff55" stroke-width="1.5"/>
-      <text x="44" y="54" fill="#00e5ff" font-size="8" font-family="JetBrains Mono">C</text>
-      <text x="46" y="19" fill="#00ff88" font-size="7" font-family="JetBrains Mono">H</text>
-    </svg>
+    <svg class="molecule mol-1" viewBox="0 0 120 120"><circle cx="60" cy="30" r="12" fill="#00e5ff22" stroke="#00e5ff" stroke-width="1.5"/><circle cx="30" cy="80" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/><circle cx="90" cy="80" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/><line x1="60" y1="42" x2="38" y2="72" stroke="#00e5ff55" stroke-width="1.5"/><line x1="60" y1="42" x2="82" y2="72" stroke="#00e5ff55" stroke-width="1.5"/><text x="54" y="34" fill="#00e5ff" font-size="8" font-family="monospace">O</text><text x="25" y="84" fill="#00ff88" font-size="7" font-family="monospace">H</text><text x="87" y="84" fill="#00ff88" font-size="7" font-family="monospace">H</text></svg>
+    <svg class="molecule mol-2" viewBox="0 0 140 100"><circle cx="30" cy="50" r="14" fill="#a78bfa22" stroke="#a78bfa" stroke-width="1.5"/><circle cx="80" cy="50" r="10" fill="#a78bfa22" stroke="#a78bfa" stroke-width="1.5"/><circle cx="120" cy="30" r="8" fill="#f9731622" stroke="#f97316" stroke-width="1.5"/><circle cx="120" cy="70" r="8" fill="#f9731622" stroke="#f97316" stroke-width="1.5"/><line x1="44" y1="50" x2="70" y2="50" stroke="#a78bfa55" stroke-width="2"/><line x1="90" y1="42" x2="112" y2="34" stroke="#a78bfa55" stroke-width="1.5"/><line x1="90" y1="58" x2="112" y2="66" stroke="#a78bfa55" stroke-width="1.5"/><text x="22" y="54" fill="#a78bfa" font-size="9" font-family="monospace">Na</text><text x="74" y="54" fill="#a78bfa" font-size="8" font-family="monospace">Cl</text></svg>
+    <svg class="molecule mol-3" viewBox="0 0 100 100"><circle cx="50" cy="50" r="16" fill="#00e5ff11" stroke="#00e5ff" stroke-width="1.5"/><circle cx="50" cy="15" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/><circle cx="82" cy="68" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/><circle cx="18" cy="68" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/><line x1="50" y1="34" x2="50" y2="23" stroke="#00e5ff55" stroke-width="1.5"/><line x1="62" y1="60" x2="74" y2="63" stroke="#00e5ff55" stroke-width="1.5"/><line x1="38" y1="60" x2="26" y2="63" stroke="#00e5ff55" stroke-width="1.5"/><text x="44" y="54" fill="#00e5ff" font-size="8" font-family="monospace">C</text></svg>
     <div class="grid-overlay"></div>
   </div>
 
   <!-- Навигация -->
   <nav class="nav">
-    <div class="nav-logo">
-      <span class="logo-icon">⬡</span>
-      <span>ChemLab</span>
-    </div>
+    <div class="nav-logo"><span class="logo-icon">⬡</span><span>ChemLab</span></div>
     <div class="nav-links">
       <a href="#reactions">Реакции</a>
       <a href="#elements">Элементы</a>
-      <a href="#access">Доступ</a>
+      <a href="#biology">Биология</a>
+      <a href="#access">Войти</a>
     </div>
+    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="nav-cta">Получить доступ</a>
   </nav>
 
   <!-- Герой -->
   <section class="hero">
     <div class="hero-tag">Химия — точная наука</div>
-    <h1 class="hero-title">
-      Мир молекул<br>
-      <span class="gradient-text">и реакций</span>
-    </h1>
-    <p class="hero-sub">
-      Интерактивная платформа для изучения химии. Регистрируйся через Telegram
-      и получи доступ к лабораторным материалам, реакциям и базе элементов.
-    </p>
+    <h1 class="hero-title">Мир молекул<br><span class="gradient-text">и реакций</span></h1>
+    <p class="hero-sub">Интерактивная платформа по химии и биологии. Зарегистрируйся через Telegram и открой полную базу знаний: таблицу Менделеева, ОВР, таблицу растворимости и биохимию.</p>
     <div class="hero-formulas">
       <span class="formula">H<sub>2</sub>O</span>
       <span class="formula-sep">+</span>
@@ -83,107 +44,193 @@
       <span class="formula">H<sub>2</sub>CO<sub>3</sub></span>
     </div>
     <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="btn-primary">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.92.44l-2.56-1.88-1.24 1.18c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.82 14.6 5.3 13.82c-.56-.18-.56-.56.12-.82l8.96-3.46c.46-.16.86.1.7.8z" fill="#fff"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.92.44l-2.56-1.88-1.24 1.18c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.82 14.6 5.3 13.82c-.56-.18-.56-.56.12-.82l8.96-3.46c.46-.16.86.1.7.8z" fill="#060810"/></svg>
       Зарегистрироваться в Telegram
     </a>
-    <p class="hero-hint">Уже есть код? <a href="#access" class="hint-link">Введите ниже</a></p>
+    <p class="hero-hint">Уже есть код? <a href="#access" class="hint-link">Войти в лабораторию</a></p>
   </section>
 
-  <!-- Реакции -->
+  <!-- Привилегии регистрации -->
+  <section class="section perks-section">
+    <div class="section-label">Эксклюзивный доступ</div>
+    <h2 class="section-title">Что открывает регистрация</h2>
+    <div class="perks-grid">
+      <div class="perk-card">
+        <div class="perk-icon lock-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h4>Полная таблица Менделеева</h4>
+        <p>Все 118 элементов с интерактивными карточками — масса, валентность, тип, история открытия</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon lock-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><path d="M3 3h18v18H3z"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+        </div>
+        <h4>Таблица растворимости</h4>
+        <p>Полная таблица растворимости солей, кислот и оснований — необходимый справочник</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon lock-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h4>ОВР и реакции с кислотами</h4>
+        <p>Окислительно-восстановительные реакции, исключения, пассивация металлов</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon lock-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12h8M12 8v8"/></svg>
+        </div>
+        <h4>Раздел биологии</h4>
+        <p>Биохимия, ДНК/РНК, ферменты, клеточные реакции — связь химии и биологии</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon lock-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+        </div>
+        <h4>Ряд активности металлов</h4>
+        <p>Интерактивный электрохимический ряд напряжений с объяснениями реакций замещения</p>
+      </div>
+      <div class="perk-card">
+        <div class="perk-icon lock-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>pH шкала и кислотность</h4>
+        <p>Интерактивная шкала pH с примерами веществ и расчётами кислотности</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Базовые реакции (публичные) -->
   <section class="section" id="reactions">
     <div class="section-label">Химические реакции</div>
     <h2 class="section-title">Основные типы реакций</h2>
     <div class="cards-grid">
-
       <div class="card card-glow-cyan">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        </div>
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
         <div class="card-formula">CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O</div>
         <h3>Горение</h3>
-        <p>Реакция вещества с кислородом с выделением теплоты и света. Продукты: CO₂ и H₂O.</p>
+        <p>Реакция вещества с кислородом с выделением теплоты и света.</p>
         <div class="card-tag">Экзотермическая</div>
       </div>
-
       <div class="card card-glow-green">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
-        </div>
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
         <div class="card-formula">6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub></div>
         <h3>Фотосинтез</h3>
-        <p>Превращение CO₂ и воды в глюкозу под действием света. Основа жизни на Земле.</p>
+        <p>Превращение CO₂ и воды в глюкозу под действием света.</p>
         <div class="card-tag">Эндотермическая</div>
       </div>
-
       <div class="card card-glow-purple">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
-        </div>
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg></div>
         <div class="card-formula">NaCl → Na<sup>+</sup> + Cl<sup>-</sup></div>
         <h3>Диссоциация</h3>
         <p>Распад ионных соединений на ионы при растворении в воде.</p>
         <div class="card-tag">Ионная</div>
       </div>
-
       <div class="card card-glow-orange">
-        <div class="card-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
-        </div>
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg></div>
         <div class="card-formula">Fe + CuSO<sub>4</sub> → FeSO<sub>4</sub> + Cu</div>
         <h3>Замещение</h3>
-        <p>Более активный металл вытесняет менее активный из раствора его соли.</p>
+        <p>Более активный металл вытесняет менее активный из раствора соли.</p>
         <div class="card-tag">Окислительно-восстановительная</div>
       </div>
-
+      <div class="card card-glow-cyan">
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="card-formula">HCl + NaOH → NaCl + H<sub>2</sub>O</div>
+        <h3>Нейтрализация</h3>
+        <p>Реакция кислоты с основанием с образованием соли и воды.</p>
+        <div class="card-tag">Обмен</div>
+      </div>
+      <div class="card card-glow-green">
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></div>
+        <div class="card-formula">2HgO → 2Hg + O<sub>2</sub></div>
+        <h3>Разложение</h3>
+        <p>Распад одного вещества на несколько более простых.</p>
+        <div class="card-tag">Термическая</div>
+      </div>
+      <div class="card card-glow-purple">
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12"/></svg></div>
+        <div class="card-formula">N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub></div>
+        <h3>Обратимая реакция</h3>
+        <p>Реакция идёт в обоих направлениях. Синтез аммиака Габером-Бошем.</p>
+        <div class="card-tag">Равновесие</div>
+      </div>
+      <div class="card card-glow-orange">
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
+        <div class="card-formula">BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> → BaSO<sub>4</sub>↓ + 2NaCl</div>
+        <h3>Осадок</h3>
+        <p>Реакция обмена с образованием нерастворимого осадка BaSO₄.</p>
+        <div class="card-tag">Ионный обмен</div>
+      </div>
     </div>
   </section>
 
-  <!-- Элементы -->
+  <!-- Элементы (превью) -->
   <section class="section" id="elements">
     <div class="section-label">Периодическая таблица</div>
-    <h2 class="section-title">Интересные элементы</h2>
+    <h2 class="section-title">Ключевые элементы <span class="muted-text">— полная таблица после входа</span></h2>
     <div class="elements-grid">
-      <div class="element" style="--el-color: #00e5ff">
-        <div class="el-number">1</div>
-        <div class="el-symbol">H</div>
-        <div class="el-name">Водород</div>
-        <div class="el-mass">1.008</div>
-        <div class="el-fact">Самый лёгкий и распространённый элемент во Вселенной</div>
+      <div class="element" style="--el-color:#00e5ff"><div class="el-number">1</div><div class="el-symbol">H</div><div class="el-name">Водород</div><div class="el-mass">1.008</div><div class="el-fact">Самый лёгкий элемент во Вселенной, основа звёзд</div></div>
+      <div class="element" style="--el-color:#a78bfa"><div class="el-number">6</div><div class="el-symbol">C</div><div class="el-name">Углерод</div><div class="el-mass">12.011</div><div class="el-fact">Основа органики: алмаз, графит, фуллерены</div></div>
+      <div class="element" style="--el-color:#00ff88"><div class="el-number">8</div><div class="el-symbol">O</div><div class="el-name">Кислород</div><div class="el-mass">15.999</div><div class="el-fact">Необходим для дыхания и горения</div></div>
+      <div class="element" style="--el-color:#f97316"><div class="el-number">11</div><div class="el-symbol">Na</div><div class="el-name">Натрий</div><div class="el-mass">22.990</div><div class="el-fact">Реагирует с водой, выделяя H₂ и тепло</div></div>
+      <div class="element" style="--el-color:#ec4899"><div class="el-number">79</div><div class="el-symbol">Au</div><div class="el-name">Золото</div><div class="el-mass">196.97</div><div class="el-fact">Не окисляется, лучший проводник</div></div>
+      <div class="element" style="--el-color:#06b6d4"><div class="el-number">26</div><div class="el-symbol">Fe</div><div class="el-name">Железо</div><div class="el-mass">55.845</div><div class="el-fact">Самый распространённый металл коры</div></div>
+    </div>
+    <div class="section-cta">
+      <p>Хочешь видеть все 118 элементов с интерактивными свойствами?</p>
+      <a href="#access" class="btn-secondary">Войти в лабораторию</a>
+    </div>
+  </section>
+
+  <!-- Биология (превью) -->
+  <section class="section bio-preview-section" id="biology">
+    <div class="section-label">Биохимия</div>
+    <h2 class="section-title">Химия в живой природе</h2>
+    <div class="bio-preview-grid">
+      <div class="bio-card">
+        <div class="bio-icon">🧬</div>
+        <h4>ДНК и РНК</h4>
+        <p>Нуклеиновые кислоты — длинные цепи нуклеотидов, связанных фосфодиэфирными связями. Азотистые основания (A, T, G, C) хранят генетическую информацию.</p>
+        <div class="bio-formula">C₁₀H₁₃N₅O₄ <span>— дезоксиаденозин</span></div>
       </div>
-      <div class="element" style="--el-color: #a78bfa">
-        <div class="el-number">6</div>
-        <div class="el-symbol">C</div>
-        <div class="el-name">Углерод</div>
-        <div class="el-mass">12.011</div>
-        <div class="el-fact">Основа органической химии и всей жизни на Земле</div>
+      <div class="bio-card">
+        <div class="bio-icon">⚡</div>
+        <h4>АТФ — молекула энергии</h4>
+        <p>Аденозинтрифосфат — универсальная валюта энергии в клетке. При гидролизе выделяет ~30 кДж/моль.</p>
+        <div class="bio-formula">АТФ + H₂O → АДФ + Fн + 30 кДж</div>
       </div>
-      <div class="element" style="--el-color: #00ff88">
-        <div class="el-number">8</div>
-        <div class="el-symbol">O</div>
-        <div class="el-name">Кислород</div>
-        <div class="el-mass">15.999</div>
-        <div class="el-fact">Необходим для дыхания и горения</div>
+      <div class="bio-card">
+        <div class="bio-icon">🌿</div>
+        <h4>Клеточное дыхание</h4>
+        <p>Окисление глюкозы в митохондриях с образованием АТФ — обратная реакция фотосинтеза.</p>
+        <div class="bio-formula">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 38 АТФ</div>
       </div>
-      <div class="element" style="--el-color: #f97316">
-        <div class="el-number">11</div>
-        <div class="el-symbol">Na</div>
-        <div class="el-name">Натрий</div>
-        <div class="el-mass">22.990</div>
-        <div class="el-fact">Реагирует с водой, выделяя водород</div>
+      <div class="bio-card locked-card">
+        <div class="lock-overlay">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Доступно после регистрации</span>
+        </div>
+        <div class="bio-icon">🔬</div>
+        <h4>Ферменты и катализ</h4>
+        <p>Биологические катализаторы белковой природы. Ускоряют реакции в 10⁶—10¹² раз.</p>
       </div>
-      <div class="element" style="--el-color: #ec4899">
-        <div class="el-number">79</div>
-        <div class="el-symbol">Au</div>
-        <div class="el-name">Золото</div>
-        <div class="el-mass">196.97</div>
-        <div class="el-fact">Не окисляется на воздухе, проводник тока</div>
+      <div class="bio-card locked-card">
+        <div class="lock-overlay">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Доступно после регистрации</span>
+        </div>
+        <div class="bio-icon">💧</div>
+        <h4>Буферные системы крови</h4>
+        <p>Бикарбонатный буфер поддерживает pH крови 7.35-7.45.</p>
       </div>
-      <div class="element" style="--el-color: #06b6d4">
-        <div class="el-number">26</div>
-        <div class="el-symbol">Fe</div>
-        <div class="el-name">Железо</div>
-        <div class="el-mass">55.845</div>
-        <div class="el-fact">Самый распространённый металл в земной коре</div>
+      <div class="bio-card locked-card">
+        <div class="lock-overlay">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Доступно после регистрации</span>
+        </div>
+        <div class="bio-icon">🧪</div>
+        <h4>Витамины и коферменты</h4>
+        <p>Химическая природа витаминов и их роль в биохимических реакциях.</p>
       </div>
     </div>
   </section>
@@ -193,135 +240,588 @@
     <div class="section-label">Лаборатория</div>
     <h2 class="section-title">Введите код доступа</h2>
     <p class="access-sub">Получите код в Telegram боте <strong>@kliopon_bot</strong> после регистрации</p>
-
     <div class="code-form">
-      <input
-        type="text"
-        id="codeInput"
-        class="code-input"
-        placeholder="000000"
-        maxlength="6"
-        inputmode="numeric"
-      >
-      <button class="btn-verify" onclick="verifyCode()">
-        <span id="btn-text">Войти в лабораторию</span>
-      </button>
+      <input type="text" id="codeInput" class="code-input" placeholder="000000" maxlength="6" inputmode="numeric">
+      <button class="btn-verify" onclick="verifyCode()"><span id="btn-text">Войти в лабораторию</span></button>
       <p id="code-error" class="code-error" style="display:none">Неверный код. Проверьте и попробуйте снова.</p>
     </div>
-
-    <div class="or-divider">
-      <span>или</span>
-    </div>
-
-    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="btn-secondary">
-      Получить код в Telegram
-    </a>
+    <div class="or-divider"><span>или</span></div>
+    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="btn-secondary">Получить код в Telegram</a>
   </section>
 
-  <!-- Лаборатория (скрытый контент) -->
-  <section class="lab-section" id="lab" style="display:none">
-    <div class="lab-header">
-      <div class="lab-badge">Доступ получен</div>
-      <h2>Добро пожаловать в лабораторию</h2>
-      <p>Здесь вы найдёте расширенные материалы по химии</p>
-    </div>
-    <div class="lab-grid">
-      <div class="lab-card">
-        <div class="lab-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4M16 3h5v5M10 14L21 3"/></svg>
-        </div>
-        <h4>Таблица Менделеева</h4>
-        <p>Полная интерактивная периодическая таблица со свойствами всех 118 элементов</p>
+  <!-- QR код для телефона -->
+  <section class="section qr-section">
+    <div class="qr-content">
+      <div class="qr-text">
+        <div class="section-label">Доступ с телефона</div>
+        <h3>Открой сайт на любом устройстве</h3>
+        <p>Отсканируй QR-код или перейди по ссылке</p>
+        <a href="https://my-site-o9qh.vercel.app" class="site-url">my-site-o9qh.vercel.app</a>
       </div>
-      <div class="lab-card">
-        <div class="lab-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
-        </div>
-        <h4>База реакций</h4>
-        <p>Более 500 химических реакций с описанием условий и механизмов протекания</p>
-      </div>
-      <div class="lab-card">
-        <div class="lab-card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M10 2l1.5 4.5L16 8l-4.5 1.5L10 14l-1.5-4.5L4 8l4.5-1.5L10 2zM20 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/></svg>
-        </div>
-        <h4>Задачи и тесты</h4>
-        <p>Практические задачи по всем разделам химии с решениями</p>
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&bgcolor=0d1117&color=00e5ff&data=https://my-site-o9qh.vercel.app" alt="QR-код сайта" width="180" height="180">
+        <p class="qr-hint">Наведи камеру телефона</p>
       </div>
     </div>
   </section>
+
+  <!-- ===== ПРИВАТНЫЙ КОНТЕНТ (скрыт до ввода кода) ===== -->
+  <div id="lab-content" style="display:none">
+
+    <!-- Полная таблица Менделеева -->
+    <section class="section pt-section">
+      <div class="lab-badge">Только для участников</div>
+      <div class="section-label">Периодическая система</div>
+      <h2 class="section-title">Таблица Менделеева — все 118 элементов</h2>
+      <div class="pt-legend">
+        <span class="legend-item" data-cat="alkali">Щелочные металлы</span>
+        <span class="legend-item" data-cat="alkaline">Щелочноземельные</span>
+        <span class="legend-item" data-cat="transition">Переходные металлы</span>
+        <span class="legend-item" data-cat="post">Постпереходные</span>
+        <span class="legend-item" data-cat="metalloid">Металлоиды</span>
+        <span class="legend-item" data-cat="nonmetal">Неметаллы</span>
+        <span class="legend-item" data-cat="halogen">Галогены</span>
+        <span class="legend-item" data-cat="noble">Благородные газы</span>
+        <span class="legend-item" data-cat="lanthanide">Лантаниды</span>
+        <span class="legend-item" data-cat="actinide">Актиниды</span>
+      </div>
+      <div class="periodic-table" id="periodicTable"></div>
+      <div id="elementModal" class="el-modal" style="display:none">
+        <div class="el-modal-content">
+          <button class="modal-close" onclick="closeModal()">×</button>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Таблица растворимости -->
+    <section class="section">
+      <div class="section-label">Справочник</div>
+      <h2 class="section-title">Таблица растворимости</h2>
+      <p class="section-sub">р — растворимо &nbsp; м — малорастворимо &nbsp; н — нерастворимо &nbsp; — — не существует</p>
+      <div class="solubility-wrapper">
+        <table class="solubility-table" id="solubilityTable"></table>
+      </div>
+    </section>
+
+    <!-- ОВР реакции -->
+    <section class="section">
+      <div class="section-label">Углублённый курс</div>
+      <h2 class="section-title">Окислительно-восстановительные реакции</h2>
+      <div class="cards-grid">
+        <div class="card card-glow-cyan">
+          <div class="card-formula">2Fe + 3Cl<sub>2</sub> → 2FeCl<sub>3</sub></div>
+          <h3>Окисление железа хлором</h3>
+          <p>Fe⁰ → Fe³⁺ + 3e⁻ (восстановитель)<br>Cl₂⁰ + 2e⁻ → 2Cl⁻ (окислитель)</p>
+          <div class="card-tag">Окислитель: Cl₂</div>
+        </div>
+        <div class="card card-glow-purple">
+          <div class="card-formula">Zn + H<sub>2</sub>SO<sub>4(разб)</sub> → ZnSO<sub>4</sub> + H<sub>2</sub></div>
+          <h3>Цинк с разбавленной кислотой</h3>
+          <p>Zn⁰ → Zn²⁺ + 2e⁻ (восстановитель)<br>2H⁺ + 2e⁻ → H₂ (окислитель)</p>
+          <div class="card-tag">Вытеснение водорода</div>
+        </div>
+        <div class="card card-glow-orange">
+          <div class="card-formula">2KMnO<sub>4</sub> + 5H<sub>2</sub>O<sub>2</sub> + 3H<sub>2</sub>SO<sub>4</sub> → 2MnSO<sub>4</sub> + 5O<sub>2</sub> + K<sub>2</sub>SO<sub>4</sub> + 8H<sub>2</sub>O</div>
+          <h3>Перманганат калия</h3>
+          <p>KMnO₄ — сильный окислитель. Mn⁺⁷ + 5e⁻ → Mn²⁺ в кислой среде.</p>
+          <div class="card-tag">Сильный окислитель</div>
+        </div>
+        <div class="card card-glow-green">
+          <div class="card-formula">Cu + 2H<sub>2</sub>SO<sub>4(конц)</sub> → CuSO<sub>4</sub> + SO<sub>2</sub> + 2H<sub>2</sub>O</div>
+          <h3>Медь в конц. серной кислоте</h3>
+          <p>Медь не вытесняет H₂, но реагирует с конц. H₂SO₄ как окислителем. Выделяется SO₂.</p>
+          <div class="card-tag">Исключение из ряда активности</div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Пассивация металлов — исключения</h3>
+      <div class="exception-box">
+        <div class="exception-item">
+          <div class="exc-formula">Al, Fe, Cr</div>
+          <div class="exc-desc">Пассивируются в концентрированных H₂SO₄ и HNO₃ при комнатной температуре — образуется плотная оксидная плёнка. Именно поэтому конц. HNO₃ перевозят в железных ёмкостях.</div>
+        </div>
+        <div class="exception-item">
+          <div class="exc-formula">Cu, Ag, Hg</div>
+          <div class="exc-desc">Не реагируют с разбавленными кислотами, но растворяются в конц. HNO₃ и конц. H₂SO₄ (горячей). Стоят правее водорода в ряду активности.</div>
+        </div>
+        <div class="exception-item">
+          <div class="exc-formula">Au, Pt</div>
+          <div class="exc-desc">Растворяются только в «царской водке» — смеси 1 части конц. HNO₃ и 3 частей конц. HCl. Au + HNO₃ + 4HCl → H[AuCl₄] + NO + 2H₂O</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ряд активности металлов -->
+    <section class="section">
+      <div class="section-label">Электрохимия</div>
+      <h2 class="section-title">Ряд активности металлов</h2>
+      <div class="activity-series">
+        <div class="activity-row" id="activitySeries"></div>
+        <div class="activity-labels">
+          <span>Усиление восстановительных свойств →</span>
+          <span>← Усиление окислительных свойств</span>
+        </div>
+      </div>
+      <div class="activity-rules">
+        <div class="rule-card">
+          <h4>Правило 1</h4>
+          <p>Металл вытесняет из раствора соли металлы, стоящие правее него в ряду.</p>
+          <div class="card-formula" style="font-size:13px">Zn + CuSO₄ → ZnSO₄ + Cu</div>
+        </div>
+        <div class="rule-card">
+          <h4>Правило 2</h4>
+          <p>Металлы до водорода вытесняют H₂ из разбавленных кислот.</p>
+          <div class="card-formula" style="font-size:13px">Fe + 2HCl → FeCl₂ + H₂↑</div>
+        </div>
+        <div class="rule-card">
+          <h4>Правило 3</h4>
+          <p>Щелочные металлы реагируют с водой, а не с растворами солей.</p>
+          <div class="card-formula" style="font-size:13px">2Na + 2H₂O → 2NaOH + H₂↑</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Биология (полный раздел) -->
+    <section class="section bio-section">
+      <div class="section-label">Биохимия — эксклюзив</div>
+      <h2 class="section-title">Химия живых систем</h2>
+      <div class="bio-grid-full">
+        <div class="bio-card-full">
+          <div class="bio-header"><div class="bio-icon">🧬</div><h3>ДНК и РНК</h3></div>
+          <p>Нуклеиновые кислоты состоят из нуклеотидов: азотистое основание + дезоксирибоза/рибоза + фосфат.</p>
+          <div class="bio-pairs">
+            <span>Аденин (A) — Тимин (T)</span>
+            <span>Гуанин (G) — Цитозин (C)</span>
+          </div>
+          <div class="bio-formula">Водородные связи: A=T (2 связи), G≡C (3 связи)</div>
+        </div>
+        <div class="bio-card-full">
+          <div class="bio-header"><div class="bio-icon">⚡</div><h3>АТФ и энергетика клетки</h3></div>
+          <p>АТФ синтезируется в митохондриях через цикл Кребса и окислительное фосфорилирование.</p>
+          <div class="bio-formula">1 молекула глюкозы → 36-38 молекул АТФ</div>
+          <div class="bio-stages">
+            <span>Гликолиз: 2 АТФ</span>
+            <span>Цикл Кребса: 2 АТФ</span>
+            <span>Фосфорилирование: 32-34 АТФ</span>
+          </div>
+        </div>
+        <div class="bio-card-full">
+          <div class="bio-header"><div class="bio-icon">🔬</div><h3>Ферменты — биокатализаторы</h3></div>
+          <p>Белки, ускоряющие химические реакции в 10⁶–10¹² раз без изменения условий реакции.</p>
+          <div class="bio-formula">E + S → ES → E + P (Михаэлис-Ментен)</div>
+          <p style="font-size:13px;color:var(--muted);margin-top:12px">Активный центр — пространственная полость, комплементарная субстрату. pH и температура влияют на конформацию.</p>
+        </div>
+        <div class="bio-card-full">
+          <div class="bio-header"><div class="bio-icon">💧</div><h3>Буферные системы крови</h3></div>
+          <p>Кровь поддерживает pH = 7.35–7.45 с помощью бикарбонатного буфера.</p>
+          <div class="bio-formula">CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻</div>
+          <div class="bio-pairs">
+            <span>Ацидоз: pH &lt; 7.35 (избыток CO₂)</span>
+            <span>Алкалоз: pH &gt; 7.45 (недостаток CO₂)</span>
+          </div>
+        </div>
+        <div class="bio-card-full">
+          <div class="bio-header"><div class="bio-icon">🧪</div><h3>Витамины</h3></div>
+          <div class="vitamins-table">
+            <div class="vit-row"><span class="vit-name">C (аскорбиновая кислота)</span><span class="vit-formula">C₆H₈O₆</span><span class="vit-role">Антиоксидант, синтез коллагена</span></div>
+            <div class="vit-row"><span class="vit-name">B₁ (тиамин)</span><span class="vit-formula">C₁₂H₁₇N₄OS⁺</span><span class="vit-role">Кофермент декарбоксилаз</span></div>
+            <div class="vit-row"><span class="vit-name">D (кальциферол)</span><span class="vit-formula">C₂₇H₄₄O</span><span class="vit-role">Регуляция кальция, кости</span></div>
+            <div class="vit-row"><span class="vit-name">A (ретинол)</span><span class="vit-formula">C₂₀H₃₀O</span><span class="vit-role">Зрение, рост клеток</span></div>
+          </div>
+        </div>
+        <div class="bio-card-full">
+          <div class="bio-header"><div class="bio-icon">🌡️</div><h3>pH шкала</h3></div>
+          <p>pH = -log[H⁺]. Нейтральная среда: pH = 7 при 25°C.</p>
+          <div class="ph-scale">
+            <div class="ph-bar">
+              <div class="ph-gradient"></div>
+              <div class="ph-markers">
+                <span style="left:0%">0</span><span style="left:14.3%">2</span><span style="left:28.6%">4</span><span style="left:42.9%">6</span><span style="left:50%">7</span><span style="left:57.1%">8</span><span style="left:71.4%">10</span><span style="left:85.7%">12</span><span style="left:100%">14</span>
+              </div>
+            </div>
+            <div class="ph-examples">
+              <div class="ph-ex" style="left:2%"><span>HCl</span></div>
+              <div class="ph-ex" style="left:18%"><span>Желудок</span></div>
+              <div class="ph-ex" style="left:35%"><span>Кофе</span></div>
+              <div class="ph-ex" style="left:50%"><span>Кровь 7.4</span></div>
+              <div class="ph-ex" style="left:65%"><span>Морская вода</span></div>
+              <div class="ph-ex" style="left:82%"><span>NaOH</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- конец lab-content -->
 
   <!-- Футер -->
   <footer class="footer">
-    <div class="footer-logo">
-      <span class="logo-icon">⬡</span>
-      <span>ChemLab</span>
-    </div>
-    <p>Химия открыта для всех</p>
+    <div class="footer-logo"><span class="logo-icon">⬡</span><span>ChemLab</span></div>
+    <p>Химия и биология — открыты для всех</p>
     <a href="https://t.me/kliopon_bot" target="_blank" class="footer-tg">@kliopon_bot</a>
   </footer>
 
   <script>
-    const SUPABASE_URL = 'https://oalmsumggrsotmkfusen.supabase.co';
-    const SUPABASE_KEY = 'sb_publishable_byBssnfFF7khESuRDOei-w_FwRJ99oz';
+    // ===== SUPABASE CONFIG =====
+    const SB_URL = 'https://oalmsumggrsotmkfusen.supabase.co';
+    const SB_KEY = 'sb_publishable_byBssnfFF7khESuRDOei-w_FwRJ99oz';
 
+    // ===== ДАННЫЕ ЭЛЕМЕНТОВ =====
+    const ELEMENTS = [
+      {n:1,s:'H',name:'Водород',m:'1.008',g:1,p:1,c:'nonmetal',desc:'Самый лёгкий и распространённый элемент. Основа звёзд, топливо будущего.'},
+      {n:2,s:'He',name:'Гелий',m:'4.003',g:18,p:1,c:'noble',desc:'Второй по распространённости во Вселенной. Не образует соединений.'},
+      {n:3,s:'Li',name:'Литий',m:'6.941',g:1,p:2,c:'alkali',desc:'Самый лёгкий металл. Используется в аккумуляторах.'},
+      {n:4,s:'Be',name:'Бериллий',m:'9.012',g:2,p:2,c:'alkaline',desc:'Очень твёрдый лёгкий металл. Токсичен.'},
+      {n:5,s:'B',name:'Бор',m:'10.811',g:13,p:2,c:'metalloid',desc:'Металлоид. Используется в боросиликатном стекле.'},
+      {n:6,s:'C',name:'Углерод',m:'12.011',g:14,p:2,c:'nonmetal',desc:'Основа органической жизни. Алмаз, графит, фуллерены.'},
+      {n:7,s:'N',name:'Азот',m:'14.007',g:15,p:2,c:'nonmetal',desc:'78% атмосферы Земли. Основа белков и ДНК.'},
+      {n:8,s:'O',name:'Кислород',m:'15.999',g:16,p:2,c:'nonmetal',desc:'Необходим для дыхания. Составляет 21% атмосферы.'},
+      {n:9,s:'F',name:'Фтор',m:'18.998',g:17,p:2,c:'halogen',desc:'Самый электроотрицательный элемент. Реагирует почти со всем.'},
+      {n:10,s:'Ne',name:'Неон',m:'20.180',g:18,p:2,c:'noble',desc:'Инертный газ. Используется в неоновых лампах.'},
+      {n:11,s:'Na',name:'Натрий',m:'22.990',g:1,p:3,c:'alkali',desc:'Реагирует с водой. Важен для нервной системы.'},
+      {n:12,s:'Mg',name:'Магний',m:'24.305',g:2,p:3,c:'alkaline',desc:'Лёгкий конструкционный металл. Входит в состав хлорофилла.'},
+      {n:13,s:'Al',name:'Алюминий',m:'26.982',g:13,p:3,c:'post',desc:'Самый распространённый металл в коре Земли. Лёгкий и прочный.'},
+      {n:14,s:'Si',name:'Кремний',m:'28.086',g:14,p:3,c:'metalloid',desc:'Основа электроники и полупроводников. Кварц, стекло.'},
+      {n:15,s:'P',name:'Фосфор',m:'30.974',g:15,p:3,c:'nonmetal',desc:'Белый фосфор ядовит. Красный — используется в спичках.'},
+      {n:16,s:'S',name:'Сера',m:'32.065',g:16,p:3,c:'nonmetal',desc:'Входит в состав аминокислот. H₂S — «запах тухлых яиц».'},
+      {n:17,s:'Cl',name:'Хлор',m:'35.453',g:17,p:3,c:'halogen',desc:'Жёлто-зелёный газ. Дезинфектант воды, PVC.'},
+      {n:18,s:'Ar',name:'Аргон',m:'39.948',g:18,p:3,c:'noble',desc:'Инертный газ. Используется в сварке и лампочках.'},
+      {n:19,s:'K',name:'Калий',m:'39.098',g:1,p:4,c:'alkali',desc:'Важен для клеточного потенциала. Реагирует с водой бурно.'},
+      {n:20,s:'Ca',name:'Кальций',m:'40.078',g:2,p:4,c:'alkaline',desc:'Основа костей и зубов. CaCO₃ — известняк, мрамор.'},
+      {n:21,s:'Sc',name:'Скандий',m:'44.956',g:3,p:4,c:'transition',desc:'Переходный металл. Используется в аэрокосмической технике.'},
+      {n:22,s:'Ti',name:'Титан',m:'47.867',g:4,p:4,c:'transition',desc:'Прочный лёгкий металл. Используется в медицине и авиации.'},
+      {n:23,s:'V',name:'Ванадий',m:'50.942',g:5,p:4,c:'transition',desc:'Катализатор в производстве серной кислоты.'},
+      {n:24,s:'Cr',name:'Хром',m:'51.996',g:6,p:4,c:'transition',desc:'Твёрдый блестящий металл. Хромирование, нержавеющая сталь.'},
+      {n:25,s:'Mn',name:'Марганец',m:'54.938',g:7,p:4,c:'transition',desc:'Сильный окислитель в виде KMnO₄. Добавка к стали.'},
+      {n:26,s:'Fe',name:'Железо',m:'55.845',g:8,p:4,c:'transition',desc:'Самый используемый металл. Основа стали.'},
+      {n:27,s:'Co',name:'Кобальт',m:'58.933',g:9,p:4,c:'transition',desc:'Ферромагнитный металл. Используется в батареях.'},
+      {n:28,s:'Ni',name:'Никель',m:'58.693',g:10,p:4,c:'transition',desc:'Антикоррозийный металл. Никелирование, монеты.'},
+      {n:29,s:'Cu',name:'Медь',m:'63.546',g:11,p:4,c:'transition',desc:'Отличный проводник. Провода, бронза, латунь.'},
+      {n:30,s:'Zn',name:'Цинк',m:'65.38',g:12,p:4,c:'transition',desc:'Защищает железо от коррозии. Цинкование.'},
+      {n:31,s:'Ga',name:'Галлий',m:'69.723',g:13,p:4,c:'post',desc:'Плавится в руке (T°пл = 29.8°C). Полупроводники.'},
+      {n:32,s:'Ge',name:'Германий',m:'72.630',g:14,p:4,c:'metalloid',desc:'Полупроводник. Предсказан Менделеевым как «экасилиций».'},
+      {n:33,s:'As',name:'Мышьяк',m:'74.922',g:15,p:4,c:'metalloid',desc:'Ядовитый металлоид. Известен как яд.'},
+      {n:34,s:'Se',name:'Селен',m:'78.971',g:16,p:4,c:'nonmetal',desc:'Фотоэлектрическая активность. Микроэлемент.'},
+      {n:35,s:'Br',name:'Бром',m:'79.904',g:17,p:4,c:'halogen',desc:'Единственный жидкий неметалл при н.у. Краснo-бурая жидкость.'},
+      {n:36,s:'Kr',name:'Криптон',m:'83.798',g:18,p:4,c:'noble',desc:'Инертный газ. Используется в лазерах.'},
+      {n:37,s:'Rb',name:'Рубидий',m:'85.468',g:1,p:5,c:'alkali',desc:'Мягкий щелочной металл. Воспламеняется на воздухе.'},
+      {n:38,s:'Sr',name:'Стронций',m:'87.62',g:2,p:5,c:'alkaline',desc:'Красный цвет в пламени. Sr-90 — опасный радиоизотоп.'},
+      {n:39,s:'Y',name:'Иттрий',m:'88.906',g:3,p:5,c:'transition',desc:'Используется в лазерах и сверхпроводниках.'},
+      {n:40,s:'Zr',name:'Цирконий',m:'91.224',g:4,p:5,c:'transition',desc:'Жаропрочный металл. Оболочки ядерных реакторов.'},
+      {n:41,s:'Nb',name:'Ниобий',m:'92.906',g:5,p:5,c:'transition',desc:'Используется в сверхпроводящих магнитах.'},
+      {n:42,s:'Mo',name:'Молибден',m:'95.96',g:6,p:5,c:'transition',desc:'Высокая температура плавления. Легирующий элемент.'},
+      {n:43,s:'Tc',name:'Технеций',m:'(98)',g:7,p:5,c:'transition',desc:'Первый искусственно синтезированный элемент.'},
+      {n:44,s:'Ru',name:'Рутений',m:'101.07',g:8,p:5,c:'transition',desc:'Платиновый металл. Катализатор.'},
+      {n:45,s:'Rh',name:'Родий',m:'102.91',g:9,p:5,c:'transition',desc:'Дорогой платиновый металл. Каталитические нейтрализаторы.'},
+      {n:46,s:'Pd',name:'Палладий',m:'106.42',g:10,p:5,c:'transition',desc:'Поглощает водород. Катализатор гидрирования.'},
+      {n:47,s:'Ag',name:'Серебро',m:'107.87',g:11,p:5,c:'transition',desc:'Лучший проводник электричества. Антибактериальный.'},
+      {n:48,s:'Cd',name:'Кадмий',m:'112.41',g:12,p:5,c:'transition',desc:'Токсичный металл. Ni-Cd аккумуляторы.'},
+      {n:49,s:'In',name:'Индий',m:'114.82',g:13,p:5,c:'post',desc:'Мягкий металл. ITO — прозрачные электроды экранов.'},
+      {n:50,s:'Sn',name:'Олово',m:'118.71',g:14,p:5,c:'post',desc:'Низкая температура плавления. Лужение жести, припой.'},
+      {n:51,s:'Sb',name:'Сурьма',m:'121.76',g:15,p:5,c:'metalloid',desc:'Металлоид. Используется в полупроводниках и огнезащите.'},
+      {n:52,s:'Te',name:'Теллур',m:'127.60',g:16,p:5,c:'metalloid',desc:'Редкий металлоид. Используется в полупроводниках.'},
+      {n:53,s:'I',name:'Йод',m:'126.90',g:17,p:5,c:'halogen',desc:'Необходим для синтеза гормонов щитовидной железы.'},
+      {n:54,s:'Xe',name:'Ксенон',m:'131.29',g:18,p:5,c:'noble',desc:'Инертный газ. Анестетик, лазеры, ксеноновые лампы.'},
+      {n:55,s:'Cs',name:'Цезий',m:'132.91',g:1,p:6,c:'alkali',desc:'Самый реактивный щелочной металл. Атомные часы.'},
+      {n:56,s:'Ba',name:'Барий',m:'137.33',g:2,p:6,c:'alkaline',desc:'BaSO₄ — рентгеноконтрастное вещество. BaCl₂ — ядовит.'},
+      {n:57,s:'La',name:'Лантан',m:'138.91',g:3,p:6,c:'lanthanide',desc:'Первый лантанид. Используется в оптике и катализаторах.'},
+      {n:58,s:'Ce',name:'Церий',m:'140.12',g:4,p:6,c:'lanthanide',desc:'Самый распространённый лантанид. Кремний для зажигалок.'},
+      {n:59,s:'Pr',name:'Празеодим',m:'140.91',g:5,p:6,c:'lanthanide',desc:'Используется в магнитах и лазерах.'},
+      {n:60,s:'Nd',name:'Неодим',m:'144.24',g:6,p:6,c:'lanthanide',desc:'Nd-магниты — самые сильные постоянные магниты.'},
+      {n:61,s:'Pm',name:'Прометий',m:'(145)',g:7,p:6,c:'lanthanide',desc:'Радиоактивный. Все изотопы нестабильны.'},
+      {n:62,s:'Sm',name:'Самарий',m:'150.36',g:8,p:6,c:'lanthanide',desc:'Sm-Co — высококоэрцитивные магниты.'},
+      {n:63,s:'Eu',name:'Европий',m:'151.96',g:9,p:6,c:'lanthanide',desc:'Используется в красном и синем люминофоре экранов.'},
+      {n:64,s:'Gd',name:'Гадолиний',m:'157.25',g:10,p:6,c:'lanthanide',desc:'Контрастное вещество для МРТ.'},
+      {n:65,s:'Tb',name:'Тербий',m:'158.93',g:11,p:6,c:'lanthanide',desc:'Зелёный люминофор. Магнитострикция.'},
+      {n:66,s:'Dy',name:'Диспрозий',m:'162.50',g:12,p:6,c:'lanthanide',desc:'Добавляется в неодимовые магниты для термостабильности.'},
+      {n:67,s:'Ho',name:'Гольмий',m:'164.93',g:13,p:6,c:'lanthanide',desc:'Сильнейший из природных магнитных материалов.'},
+      {n:68,s:'Er',name:'Эрбий',m:'167.26',g:14,p:6,c:'lanthanide',desc:'Используется в оптоволоконных усилителях.'},
+      {n:69,s:'Tm',name:'Тулий',m:'168.93',g:15,p:6,c:'lanthanide',desc:'Источник рентгеновского излучения для медицины.'},
+      {n:70,s:'Yb',name:'Иттербий',m:'173.05',g:16,p:6,c:'lanthanide',desc:'Используется в атомных часах и лазерах.'},
+      {n:71,s:'Lu',name:'Лютеций',m:'174.97',g:17,p:6,c:'lanthanide',desc:'Самый тяжёлый и твёрдый лантанид.'},
+      {n:72,s:'Hf',name:'Гафний',m:'178.49',g:4,p:6,c:'transition',desc:'Ядерная техника (поглощает нейтроны).'},
+      {n:73,s:'Ta',name:'Тантал',m:'180.95',g:5,p:6,c:'transition',desc:'Коррозионностойкий. Используется в конденсаторах.'},
+      {n:74,s:'W',name:'Вольфрам',m:'183.84',g:6,p:6,c:'transition',desc:'Самая высокая температура плавления (3422°C). Нити накала.'},
+      {n:75,s:'Re',name:'Рений',m:'186.21',g:7,p:6,c:'transition',desc:'Редчайший металл. Жаропрочные сплавы для двигателей.'},
+      {n:76,s:'Os',name:'Осмий',m:'190.23',g:8,p:6,c:'transition',desc:'Самый плотный элемент (22.59 г/см³). OsO₄ — ядовит.'},
+      {n:77,s:'Ir',name:'Иридий',m:'192.22',g:9,p:6,c:'transition',desc:'Самый коррозионностойкий металл. Эталон килограмма.'},
+      {n:78,s:'Pt',name:'Платина',m:'195.08',g:10,p:6,c:'transition',desc:'Катализатор (каталитические нейтрализаторы). Ювелирный металл.'},
+      {n:79,s:'Au',name:'Золото',m:'196.97',g:11,p:6,c:'transition',desc:'Не окисляется. Электронные контакты, ювелирное дело.'},
+      {n:80,s:'Hg',name:'Ртуть',m:'200.59',g:12,p:6,c:'transition',desc:'Жидкий металл при н.у. Токсичен. Термометры, лампы.'},
+      {n:81,s:'Tl',name:'Таллий',m:'204.38',g:13,p:6,c:'post',desc:'Высокотоксичный тяжёлый металл.'},
+      {n:82,s:'Pb',name:'Свинец',m:'207.2',g:14,p:6,c:'post',desc:'Тяжёлый мягкий металл. Аккумуляторы, защита от радиации.'},
+      {n:83,s:'Bi',name:'Висмут',m:'208.98',g:15,p:6,c:'post',desc:'Самый тяжёлый стабильный элемент. Диамагнетик.'},
+      {n:84,s:'Po',name:'Полоний',m:'(209)',g:16,p:6,c:'metalloid',desc:'Радиоактивный. Открыт Марией Кюри. Альфа-источник.'},
+      {n:85,s:'At',name:'Астат',m:'(210)',g:17,p:6,c:'halogen',desc:'Редчайший природный элемент. Радиоактивен.'},
+      {n:86,s:'Rn',name:'Радон',m:'(222)',g:18,p:6,c:'noble',desc:'Радиоактивный инертный газ. Накапливается в подвалах.'},
+      {n:87,s:'Fr',name:'Франций',m:'(223)',g:1,p:7,c:'alkali',desc:'Самый редкий природный элемент. Нестабилен.'},
+      {n:88,s:'Ra',name:'Радий',m:'(226)',g:2,p:7,c:'alkaline',desc:'Радиоактивен. Открыт Марией Кюри в 1898 г.'},
+      {n:89,s:'Ac',name:'Актиний',m:'(227)',g:3,p:7,c:'actinide',desc:'Первый актинид. Радиоактивен. Лечение рака.'},
+      {n:90,s:'Th',name:'Торий',m:'232.04',g:4,p:7,c:'actinide',desc:'Ядерное топливо. Торий-232 — потенциальный ядерный ресурс.'},
+      {n:91,s:'Pa',name:'Протактиний',m:'231.04',g:5,p:7,c:'actinide',desc:'Радиоактивный. Промежуточный продукт распада урана-235.'},
+      {n:92,s:'U',name:'Уран',m:'238.03',g:6,p:7,c:'actinide',desc:'Ядерное топливо. U-235 — делящийся изотоп для реакторов.'},
+      {n:93,s:'Np',name:'Нептуний',m:'(237)',g:7,p:7,c:'actinide',desc:'Первый трансурановый элемент. Синтезирован в 1940 г.'},
+      {n:94,s:'Pu',name:'Плутоний',m:'(244)',g:8,p:7,c:'actinide',desc:'Ядерное топливо и оружие. Высокотоксичен.'},
+      {n:95,s:'Am',name:'Америций',m:'(243)',g:9,p:7,c:'actinide',desc:'Используется в детекторах дыма (Am-241).'},
+      {n:96,s:'Cm',name:'Кюрий',m:'(247)',g:10,p:7,c:'actinide',desc:'Назван в честь Марии и Пьера Кюри.'},
+      {n:97,s:'Bk',name:'Берклий',m:'(247)',g:11,p:7,c:'actinide',desc:'Синтетический трансурановый элемент.'},
+      {n:98,s:'Cf',name:'Калифорний',m:'(251)',g:12,p:7,c:'actinide',desc:'Cf-252 — мощный нейтронный источник.'},
+      {n:99,s:'Es',name:'Эйнштейний',m:'(252)',g:13,p:7,c:'actinide',desc:'Назван в честь Альберта Эйнштейна.'},
+      {n:100,s:'Fm',name:'Фермий',m:'(257)',g:14,p:7,c:'actinide',desc:'Назван в честь Энрико Ферми.'},
+      {n:101,s:'Md',name:'Менделевий',m:'(258)',g:15,p:7,c:'actinide',desc:'Назван в честь Дмитрия Менделеева.'},
+      {n:102,s:'No',name:'Нобелий',m:'(259)',g:16,p:7,c:'actinide',desc:'Назван в честь Альфреда Нобеля.'},
+      {n:103,s:'Lr',name:'Лоуренсий',m:'(262)',g:17,p:7,c:'actinide',desc:'Последний актинид. Назван в честь Лоуренса.'},
+      {n:104,s:'Rf',name:'Резерфордий',m:'(265)',g:4,p:7,c:'transition',desc:'Назван в честь Эрнеста Резерфорда.'},
+      {n:105,s:'Db',name:'Дубний',m:'(268)',g:5,p:7,c:'transition',desc:'Назван в честь г. Дубна (Россия).'},
+      {n:106,s:'Sg',name:'Сиборгий',m:'(271)',g:6,p:7,c:'transition',desc:'Назван в честь Гленна Сиборга.'},
+      {n:107,s:'Bh',name:'Борий',m:'(270)',g:7,p:7,c:'transition',desc:'Назван в честь Нильса Бора.'},
+      {n:108,s:'Hs',name:'Хассий',m:'(277)',g:8,p:7,c:'transition',desc:'Синтетический элемент.'},
+      {n:109,s:'Mt',name:'Мейтнерий',m:'(276)',g:9,p:7,c:'transition',desc:'Назван в честь Лизы Мейтнер.'},
+      {n:110,s:'Ds',name:'Дармштадтий',m:'(281)',g:10,p:7,c:'transition',desc:'Синтезирован в Дармштадте.'},
+      {n:111,s:'Rg',name:'Рентгений',m:'(280)',g:11,p:7,c:'transition',desc:'Назван в честь Вильгельма Рентгена.'},
+      {n:112,s:'Cn',name:'Коперниций',m:'(285)',g:12,p:7,c:'transition',desc:'Назван в честь Николая Коперника.'},
+      {n:113,s:'Nh',name:'Нихоний',m:'(284)',g:13,p:7,c:'post',desc:'Синтезирован в Японии. Нихон = Япония.'},
+      {n:114,s:'Fl',name:'Флеровий',m:'(289)',g:14,p:7,c:'post',desc:'Назван в честь Флёрова (Дубна).'},
+      {n:115,s:'Mc',name:'Московий',m:'(288)',g:15,p:7,c:'post',desc:'Назван в честь Московской области.'},
+      {n:116,s:'Lv',name:'Ливерморий',m:'(293)',g:16,p:7,c:'post',desc:'Назван в честь Ливерморской лаборатории.'},
+      {n:117,s:'Ts',name:'Теннессин',m:'(294)',g:17,p:7,c:'halogen',desc:'Назван в честь штата Теннесси.'},
+      {n:118,s:'Og',name:'Оганессон',m:'(294)',g:18,p:7,c:'noble',desc:'Назван в честь Юрия Оганесяна. Тяжелейший элемент.'},
+    ];
+
+    const CAT_COLORS = {
+      alkali:'#ef4444',alkaline:'#f97316',transition:'#06b6d4',
+      post:'#3b82f6',metalloid:'#84cc16',nonmetal:'#a78bfa',
+      halogen:'#ec4899',noble:'#6366f1',lanthanide:'#14b8a6',actinide:'#8b5cf6'
+    };
+
+    // ===== ПОСТРОЕНИЕ ТАБЛИЦЫ МЕНДЕЛЕЕВА =====
+    function buildPeriodicTable() {
+      const pt = document.getElementById('periodicTable');
+      if (!pt) return;
+
+      // Создаём сетку 18x10 (7 периодов + строки для лантаноидов/актинидов)
+      const grid = document.createElement('div');
+      grid.className = 'pt-grid';
+
+      // Заголовки групп
+      for (let g = 1; g <= 18; g++) {
+        const h = document.createElement('div');
+        h.className = 'pt-group-header';
+        h.textContent = g;
+        h.style.gridColumn = g;
+        h.style.gridRow = 1;
+        grid.appendChild(h);
+      }
+
+      // Заголовки периодов
+      for (let p = 1; p <= 7; p++) {
+        const h = document.createElement('div');
+        h.className = 'pt-period-header';
+        h.textContent = p;
+        h.style.gridColumn = 0;
+        h.style.gridRow = p + 1;
+        grid.appendChild(h);
+      }
+
+      ELEMENTS.forEach(el => {
+        if (el.c === 'lanthanide' || el.c === 'actinide') return;
+        const cell = createCell(el);
+        const row = el.p + 1;
+        let col = el.g;
+        cell.style.gridColumn = col;
+        cell.style.gridRow = row;
+        grid.appendChild(cell);
+      });
+
+      // Лантаниды/актиниды placeholder
+      const lanPlaceholder = document.createElement('div');
+      lanPlaceholder.className = 'pt-cell pt-placeholder';
+      lanPlaceholder.style.gridColumn = '3 / 4';
+      lanPlaceholder.style.gridRow = '7';
+      lanPlaceholder.innerHTML = '<span>57-71</span>';
+      lanPlaceholder.style.background = '#14b8a620';
+      lanPlaceholder.style.borderColor = '#14b8a6';
+      grid.appendChild(lanPlaceholder);
+
+      const actPlaceholder = document.createElement('div');
+      actPlaceholder.className = 'pt-cell pt-placeholder';
+      actPlaceholder.style.gridColumn = '3 / 4';
+      actPlaceholder.style.gridRow = '8';
+      actPlaceholder.innerHTML = '<span>89-103</span>';
+      actPlaceholder.style.background = '#8b5cf620';
+      actPlaceholder.style.borderColor = '#8b5cf6';
+      grid.appendChild(actPlaceholder);
+
+      pt.appendChild(grid);
+
+      // Лантаниды
+      const lanRow = document.createElement('div');
+      lanRow.className = 'pt-f-block';
+      lanRow.innerHTML = '<div class="pt-f-label" style="color:#14b8a6">Лантаниды</div>';
+      const lanGrid = document.createElement('div');
+      lanGrid.className = 'pt-f-grid';
+      ELEMENTS.filter(e => e.c === 'lanthanide').forEach(el => {
+        lanGrid.appendChild(createCell(el));
+      });
+      lanRow.appendChild(lanGrid);
+      pt.appendChild(lanRow);
+
+      // Актиниды
+      const actRow = document.createElement('div');
+      actRow.className = 'pt-f-block';
+      actRow.innerHTML = '<div class="pt-f-label" style="color:#8b5cf6">Актиниды</div>';
+      const actGrid = document.createElement('div');
+      actGrid.className = 'pt-f-grid';
+      ELEMENTS.filter(e => e.c === 'actinide').forEach(el => {
+        actGrid.appendChild(createCell(el));
+      });
+      actRow.appendChild(actGrid);
+      pt.appendChild(actRow);
+    }
+
+    function createCell(el) {
+      const color = CAT_COLORS[el.c] || '#64748b';
+      const cell = document.createElement('div');
+      cell.className = 'pt-cell';
+      cell.style.setProperty('--el-col', color);
+      cell.innerHTML = `<div class="pt-num">${el.n}</div><div class="pt-sym">${el.s}</div><div class="pt-name">${el.name}</div><div class="pt-mass">${el.m}</div>`;
+      cell.onclick = () => showModal(el);
+      return cell;
+    }
+
+    function showModal(el) {
+      const color = CAT_COLORS[el.c];
+      document.getElementById('modalContent').innerHTML = `
+        <div class="modal-el-header" style="border-color:${color}">
+          <div class="modal-num">${el.n}</div>
+          <div class="modal-sym" style="color:${color}">${el.s}</div>
+          <div class="modal-name">${el.name}</div>
+        </div>
+        <div class="modal-body">
+          <div class="modal-row"><span>Атомная масса</span><strong>${el.m}</strong></div>
+          <div class="modal-row"><span>Группа</span><strong>${el.g}</strong></div>
+          <div class="modal-row"><span>Период</span><strong>${el.p}</strong></div>
+          <div class="modal-row"><span>Тип</span><strong style="color:${color}">${el.c}</strong></div>
+          <p class="modal-desc">${el.desc}</p>
+        </div>`;
+      document.getElementById('elementModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('elementModal').style.display = 'none';
+    }
+
+    // ===== ТАБЛИЦА РАСТВОРИМОСТИ =====
+    function buildSolubility() {
+      const anions = ['OH⁻','F⁻','Cl⁻','Br⁻','I⁻','S²⁻','SO₄²⁻','CO₃²⁻','SiO₃²⁻','PO₄³⁻','NO₃⁻'];
+      const cations = [
+        {name:'H⁺',vals:['—','р','р','р','р','—','р','—','—','—','р']},
+        {name:'Na⁺',vals:['р','р','р','р','р','р','р','р','р','р','р']},
+        {name:'K⁺',vals:['р','р','р','р','р','р','р','р','р','р','р']},
+        {name:'NH₄⁺',vals:['р','р','р','р','р','р','р','р','р','р','р']},
+        {name:'Ba²⁺',vals:['р','н','р','р','р','—','н','н','н','н','р']},
+        {name:'Ca²⁺',vals:['м','н','р','р','р','—','м','н','н','н','р']},
+        {name:'Mg²⁺',vals:['н','н','р','р','р','—','р','н','н','н','р']},
+        {name:'Al³⁺',vals:['н','н','р','р','р','—','р','—','н','н','р']},
+        {name:'Fe²⁺',vals:['н','н','р','р','р','н','р','н','н','н','р']},
+        {name:'Fe³⁺',vals:['н','н','р','р','—','—','р','—','н','н','р']},
+        {name:'Cu²⁺',vals:['н','н','р','р','—','н','р','н','н','н','р']},
+        {name:'Zn²⁺',vals:['н','—','р','р','р','н','р','н','н','н','р']},
+        {name:'Mn²⁺',vals:['н','м','р','р','р','н','р','н','н','н','р']},
+        {name:'Ag⁺',vals:['—','р','н','н','н','н','м','н','н','н','р']},
+        {name:'Pb²⁺',vals:['н','н','м','м','н','н','н','н','н','н','р']},
+        {name:'Hg²⁺',vals:['—','—','р','м','н','н','м','н','н','н','р']},
+      ];
+
+      const tbl = document.getElementById('solubilityTable');
+      let html = '<thead><tr><th>Катион \\ Анион</th>';
+      anions.forEach(a => html += `<th>${a}</th>`);
+      html += '</tr></thead><tbody>';
+      cations.forEach(cat => {
+        html += `<tr><td class="cat-cell">${cat.name}</td>`;
+        cat.vals.forEach(v => {
+          const cls = v==='р'?'sol-r':v==='н'?'sol-n':v==='м'?'sol-m':'sol-dash';
+          html += `<td class="${cls}">${v}</td>`;
+        });
+        html += '</tr>';
+      });
+      html += '</tbody>';
+      tbl.innerHTML = html;
+    }
+
+    // ===== РЯД АКТИВНОСТИ =====
+    function buildActivitySeries() {
+      const metals = [
+        {s:'Li',color:'#ef4444'},{s:'K',color:'#ef4444'},{s:'Ba',color:'#ef4444'},
+        {s:'Ca',color:'#f97316'},{s:'Na',color:'#ef4444'},{s:'Mg',color:'#f97316'},
+        {s:'Al',color:'#3b82f6'},{s:'Mn',color:'#06b6d4'},{s:'Zn',color:'#06b6d4'},
+        {s:'Cr',color:'#06b6d4'},{s:'Fe',color:'#06b6d4'},{s:'Co',color:'#06b6d4'},
+        {s:'Ni',color:'#06b6d4'},{s:'Sn',color:'#84cc16'},{s:'Pb',color:'#84cc16'},
+        {s:'H₂',color:'#a78bfa'},{s:'Cu',color:'#ec4899'},{s:'Ag',color:'#ec4899'},
+        {s:'Pt',color:'#ec4899'},{s:'Au',color:'#ec4899'}
+      ];
+      const row = document.getElementById('activitySeries');
+      metals.forEach(m => {
+        const div = document.createElement('div');
+        div.className = 'activity-metal';
+        div.style.setProperty('--m-color', m.color);
+        div.textContent = m.s;
+        row.appendChild(div);
+      });
+    }
+
+    // ===== ВЕРИФИКАЦИЯ КОДА =====
     async function verifyCode() {
       const code = document.getElementById('codeInput').value.trim();
       const btnText = document.getElementById('btn-text');
       const errorEl = document.getElementById('code-error');
-
-      if (code.length !== 6) {
-        errorEl.textContent = 'Введите 6-значный код';
-        errorEl.style.display = 'block';
-        return;
-      }
-
+      if (code.length !== 6) { errorEl.textContent='Введите 6-значный код'; errorEl.style.display='block'; return; }
       btnText.textContent = 'Проверяем...';
       errorEl.style.display = 'none';
-
       try {
-        const res = await fetch(
-          `${SUPABASE_URL}/rest/v1/registrations?access_code=eq.${code}&select=id,full_name`,
-          {
-            headers: {
-              'apikey': SUPABASE_KEY,
-              'Authorization': `Bearer ${SUPABASE_KEY}`
-            }
-          }
-        );
+        const res = await fetch(`${SB_URL}/rest/v1/registrations?access_code=eq.${code}&select=id,full_name`,
+          { headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` } });
         const data = await res.json();
-
         if (data && data.length > 0) {
-          document.getElementById('access').style.display = 'none';
-          const lab = document.getElementById('lab');
-          lab.style.display = 'block';
-          lab.scrollIntoView({ behavior: 'smooth' });
+          unlockLab();
           localStorage.setItem('chemlab_code', code);
         } else {
           errorEl.textContent = 'Неверный код. Проверьте и попробуйте снова.';
           errorEl.style.display = 'block';
           btnText.textContent = 'Войти в лабораторию';
         }
-      } catch (e) {
-        errorEl.textContent = 'Ошибка соединения. Попробуйте позже.';
+      } catch(e) {
+        errorEl.textContent = 'Ошибка соединения.';
         errorEl.style.display = 'block';
         btnText.textContent = 'Войти в лабораторию';
       }
     }
 
-    // Автовход если код уже есть
+    function unlockLab() {
+      document.getElementById('access').style.display = 'none';
+      const lab = document.getElementById('lab-content');
+      lab.style.display = 'block';
+      lab.scrollIntoView({ behavior: 'smooth' });
+      buildPeriodicTable();
+      buildSolubility();
+      buildActivitySeries();
+    }
+
+    // Автовход
     window.addEventListener('load', () => {
       const saved = localStorage.getItem('chemlab_code');
-      if (saved) {
-        document.getElementById('codeInput').value = saved;
-        verifyCode();
-      }
+      if (saved) { document.getElementById('codeInput').value = saved; verifyCode(); }
     });
 
-    // Только цифры в поле
     document.getElementById('codeInput').addEventListener('input', function() {
       this.value = this.value.replace(/[^0-9]/g, '');
     });
-  </script>
 
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+    document.getElementById('elementModal')?.addEventListener('click', function(e) {
+      if(e.target === this) closeModal();
+    });
+  </script>
 </body>
 </html>
