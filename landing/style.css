@@ -245,6 +245,21 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); over
 .footer p { margin-bottom:12px; }
 .footer-tg { color:var(--cyan); text-decoration:none; font-family:var(--mono); font-size:13px; }
 
+/* WELCOME BANNER */
+.welcome-banner { position:sticky; top:72px; z-index:50; background:rgba(0,255,136,0.1); border-bottom:1px solid var(--green); }
+.welcome-inner { max-width:1300px; margin:0 auto; padding:12px 48px; display:flex; align-items:center; gap:16px; }
+.welcome-icon { font-size:24px; }
+.welcome-inner strong { color:var(--green); margin-right:8px; }
+.welcome-inner span { color:var(--muted); font-size:14px; }
+.welcome-inner button { margin-left:auto; background:none; border:none; color:var(--muted); font-size:20px; cursor:pointer; line-height:1; }
+
+/* SOL TABLE FIX */
+.sol-q { color:var(--muted); background:rgba(100,116,139,0.06); }
+.sol-corner { background:var(--bg3); font-weight:700; }
+.solubility-table { font-size:12px; }
+.solubility-table th { padding:6px 8px; font-size:11px; }
+.solubility-table td { padding:5px 8px; font-size:12px; font-weight:600; }
+
 /* BIO CHAPTERS */
 .bio-chapter { margin-bottom:56px; }
 .bio-chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--border); }

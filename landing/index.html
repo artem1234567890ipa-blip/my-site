@@ -268,6 +268,18 @@
   <!-- ===== ПРИВАТНЫЙ КОНТЕНТ (скрыт до ввода кода) ===== -->
   <div id="lab-content" style="display:none">
 
+    <!-- Приветственный баннер -->
+    <div id="welcome-banner" style="display:none" class="welcome-banner">
+      <div class="welcome-inner">
+        <span class="welcome-icon">⚗️</span>
+        <div>
+          <strong>Добро пожаловать, <span id="welcome-name"></span>!</strong>
+          <span>Лаборатория разблокирована — прокрутите вниз</span>
+        </div>
+        <button onclick="this.parentElement.parentElement.style.display='none'">×</button>
+      </div>
+    </div>
+
     <!-- Полная таблица Менделеева -->
     <section class="section pt-section">
       <div class="lab-badge">Только для участников</div>
@@ -1100,39 +1112,47 @@
       document.getElementById('elementModal').style.display = 'none';
     }
 
-    // ===== ТАБЛИЦА РАСТВОРИМОСТИ (анионы = строки, катионы = столбцы) =====
+    // ===== ТАБЛИЦА РАСТВОРИМОСТИ (по стандарту российской школы) =====
+    // Формат: P=растворимо, H=нерастворимо, M=малорастворимо, ?=не определено, -=не существует
     function buildSolubility() {
-      // Катионы — заголовки столбцов (металлы сверху)
-      const cations = ['H⁺','Li⁺','Na⁺','K⁺','NH₄⁺','Ba²⁺','Ca²⁺','Mg²⁺','Al³⁺','Fe²⁺','Fe³⁺','Cu²⁺','Zn²⁺','Ag⁺','Pb²⁺'];
-      // Анионы — строки (слева)
+      const cations = ['H⁺','Li⁺','K⁺','Na⁺','NH₄⁺','Ba²⁺','Ca²⁺','Mg²⁺','Sr²⁺','Al³⁺','Cr³⁺','Fe²⁺','Fe³⁺','Ni²⁺','Co²⁺','Mn²⁺','Zn²⁺','Ag⁺','Hg²⁺','Pb²⁺','Sn²⁺','Cu²⁺'];
       const anions = [
-        {name:'OH⁻',   vals:['—','р','р','р','р','р','м','н','н','н','н','н','н','—','н']},
-        {name:'F⁻',    vals:['р','н','р','р','р','н','н','н','н','н','н','н','—','р','н']},
-        {name:'Cl⁻',   vals:['р','р','р','р','р','р','р','р','р','р','р','р','р','н','м']},
-        {name:'Br⁻',   vals:['р','р','р','р','р','р','р','р','р','р','р','р','р','н','м']},
-        {name:'I⁻',    vals:['р','р','р','р','р','р','р','р','р','р','—','—','р','н','н']},
-        {name:'S²⁻',   vals:['—','р','р','р','р','—','—','—','—','н','—','н','н','н','н']},
-        {name:'SO₃²⁻', vals:['р','р','р','р','р','н','н','н','—','н','—','н','н','н','н']},
-        {name:'SO₄²⁻', vals:['р','р','р','р','р','н','м','р','р','р','р','р','р','м','н']},
-        {name:'CO₃²⁻', vals:['—','р','р','р','р','н','н','н','—','н','—','н','н','н','н']},
-        {name:'SiO₃²⁻',vals:['н','н','р','р','р','н','н','н','н','н','н','н','н','н','н']},
-        {name:'PO₄³⁻', vals:['—','р','р','р','р','н','н','н','н','н','н','н','н','н','н']},
-        {name:'NO₃⁻',  vals:['р','р','р','р','р','р','р','р','р','р','р','р','р','р','р']},
+        {n:'OH⁻',    v:['—','P','P','P','P','P','M','H','M','H','H','H','H','H','H','H','H','—','—','H','H','H']},
+        {n:'F⁻',     v:['P','M','P','P','P','M','H','H','P','H','H','H','H','P','P','P','P','P','—','H','P','P']},
+        {n:'Cl⁻',    v:['P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','H','P','M','P','P']},
+        {n:'Br⁻',    v:['P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','H','M','M','P','P']},
+        {n:'I⁻',     v:['P','P','P','P','P','P','P','P','P','P','P','P','?','P','P','P','P','H','H','H','M','P']},
+        {n:'S²⁻',    v:['—','P','P','P','P','—','—','—','H','—','—','H','—','H','H','H','H','H','H','H','H','H']},
+        {n:'HS⁻',    v:['P','P','P','P','P','P','P','P','P','?','?','?','?','?','?','?','?','?','?','?','?','?']},
+        {n:'SO₃²⁻',  v:['P','P','P','P','P','H','H','M','H','?','—','H','?','H','?','M','H','H','H','H','?','?']},
+        {n:'HSO₃⁻',  v:['P','P','P','P','P','P','P','P','P','?','?','?','?','?','?','?','?','?','?','?','?','?']},
+        {n:'SO₄²⁻',  v:['P','P','P','P','P','H','M','P','H','P','P','P','P','P','P','P','P','M','—','H','P','P']},
+        {n:'HSO₄⁻',  v:['P','P','P','P','P','P','P','P','?','?','?','?','?','?','?','?','?','P','?','H','?','?']},
+        {n:'NO₃⁻',   v:['P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P']},
+        {n:'NO₂⁻',   v:['P','P','P','P','P','P','P','P','P','?','?','?','?','P','M','?','?','M','?','?','?','?']},
+        {n:'PO₄³⁻',  v:['—','H','P','P','—','H','H','H','H','H','H','H','H','H','H','H','H','H','H','H','H','H']},
+        {n:'HPO₄²⁻', v:['P','?','P','P','P','H','H','H','H','?','H','?','H','?','?','H','?','H','H','M','H','?']},
+        {n:'H₂PO₄⁻', v:['P','P','P','P','P','P','M','P','P','?','?','P','?','?','?','?','P','?','?','?','?','?']},
+        {n:'CO₃²⁻',  v:['P','P','P','P','P','H','H','H','H','?','?','H','—','H','H','H','H','H','H','H','?','H']},
+        {n:'HCO₃⁻',  v:['P','P','P','P','P','P','P','P','P','?','?','?','?','?','?','?','?','?','?','?','?','?']},
+        {n:'CH₃COO⁻',v:['P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','P','—','P','P']},
+        {n:'SiO₃²⁻', v:['H','H','P','P','?','H','H','H','H','?','?','H','?','?','?','H','?','?','?','H','?','?']},
       ];
 
       const tbl = document.getElementById('solubilityTable');
-      let html = '<thead><tr><th>Анион \\ Катион</th>';
+      let html = '<thead><tr><th class="sol-corner">Анион \\ Катион</th>';
       cations.forEach(c => html += `<th>${c}</th>`);
       html += '</tr></thead><tbody>';
       anions.forEach(an => {
-        html += `<tr><td class="cat-cell">${an.name}</td>`;
-        an.vals.forEach(v => {
-          const cls = v==='р'?'sol-r':v==='н'?'sol-n':v==='м'?'sol-m':'sol-dash';
+        html += `<tr><td class="cat-cell">${an.n}</td>`;
+        an.v.forEach(v => {
+          const cls = v==='P'?'sol-r':v==='H'?'sol-n':v==='M'?'sol-m':v==='?'?'sol-q':'sol-dash';
           html += `<td class="${cls}">${v}</td>`;
         });
         html += '</tr>';
       });
       html += '</tbody>';
+      // Легенда
       tbl.innerHTML = html;
     }
 
@@ -1162,35 +1182,71 @@
       const code = document.getElementById('codeInput').value.trim();
       const btnText = document.getElementById('btn-text');
       const errorEl = document.getElementById('code-error');
-      if (code.length !== 6) { errorEl.textContent='Введите 6-значный код'; errorEl.style.display='block'; return; }
+
+      if (code.length !== 6) {
+        errorEl.textContent = 'Введите 6-значный код из Telegram бота (@kliopon_bot)';
+        errorEl.style.display = 'block';
+        return;
+      }
+
       btnText.textContent = 'Проверяем...';
       errorEl.style.display = 'none';
+
       try {
-        const res = await fetch(`${SB_URL}/rest/v1/registrations?access_code=eq.${code}&select=id,full_name`,
-          { headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` } });
+        const res = await fetch(
+          `${SB_URL}/rest/v1/registrations?access_code=eq.${encodeURIComponent(code)}&select=id,full_name`,
+          {
+            method: 'GET',
+            headers: {
+              'apikey': SB_KEY,
+              'Authorization': `Bearer ${SB_KEY}`,
+              'Accept': 'application/json'
+            }
+          }
+        );
+
+        if (!res.ok) {
+          const errText = await res.text();
+          console.error('Supabase error:', res.status, errText);
+          errorEl.textContent = `Ошибка сервера (${res.status}). Попробуйте позже.`;
+          errorEl.style.display = 'block';
+          btnText.textContent = 'Войти в лабораторию';
+          return;
+        }
+
         const data = await res.json();
+        console.log('Supabase response:', data);
+
         if (data && data.length > 0) {
-          unlockLab();
           localStorage.setItem('chemlab_code', code);
+          unlockLab(data[0].full_name);
         } else {
-          errorEl.textContent = 'Неверный код. Проверьте и попробуйте снова.';
+          errorEl.textContent = `Код "${code}" не найден. Проверьте правильность.`;
           errorEl.style.display = 'block';
           btnText.textContent = 'Войти в лабораторию';
         }
       } catch(e) {
-        errorEl.textContent = 'Ошибка соединения.';
+        console.error('Network error:', e);
+        // Если CORS/сеть — всё равно пытаемся разблокировать
+        errorEl.textContent = 'Ошибка соединения. Проверьте интернет и попробуйте ещё раз.';
         errorEl.style.display = 'block';
         btnText.textContent = 'Войти в лабораторию';
       }
     }
 
-    function unlockLab() {
+    function unlockLab(name) {
       document.getElementById('access').style.display = 'none';
-      // Hide locked preview cards in public bio section
       document.querySelectorAll('.locked-card').forEach(el => el.style.display = 'none');
-      // Show full bio section link in nav
       const lab = document.getElementById('lab-content');
       lab.style.display = 'block';
+
+      // Показать приветствие
+      const welcome = document.getElementById('welcome-banner');
+      if (welcome && name) {
+        document.getElementById('welcome-name').textContent = name;
+        welcome.style.display = 'flex';
+      }
+
       lab.scrollIntoView({ behavior: 'smooth' });
       buildPeriodicTable();
       buildSolubility();
@@ -1200,7 +1256,10 @@
     // Автовход
     window.addEventListener('load', () => {
       const saved = localStorage.getItem('chemlab_code');
-      if (saved) { document.getElementById('codeInput').value = saved; verifyCode(); }
+      if (saved) {
+        document.getElementById('codeInput').value = saved;
+        verifyCode();
+      }
     });
 
     document.getElementById('codeInput').addEventListener('input', function() {
