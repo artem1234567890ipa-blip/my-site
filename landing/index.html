@@ -3,18 +3,325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Конференция</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 60px 20px; background: #0f0f0f; color: #fff; }
-    h1 { font-size: 3rem; margin-bottom: 1rem; }
-    p { font-size: 1.2rem; color: #aaa; }
-    a { display: inline-block; margin-top: 2rem; padding: 16px 40px; background: #2196F3; color: #fff; border-radius: 8px; text-decoration: none; font-size: 1.1rem; }
-    a:hover { background: #1976D2; }
-  </style>
+  <title>ChemLab — Мир химии</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎤 Конференция 2026</h1>
-  <p>Регистрация открыта. Присоединяйтесь через Telegram-бот.</p>
-  <a href="https://t.me/your_bot" target="_blank">Зарегистрироваться</a>
+
+  <!-- Фон с молекулами -->
+  <div class="bg-canvas">
+    <svg class="molecule mol-1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="30" r="12" fill="#00e5ff22" stroke="#00e5ff" stroke-width="1.5"/>
+      <circle cx="30" cy="80" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
+      <circle cx="90" cy="80" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
+      <line x1="60" y1="42" x2="38" y2="72" stroke="#00e5ff55" stroke-width="1.5"/>
+      <line x1="60" y1="42" x2="82" y2="72" stroke="#00e5ff55" stroke-width="1.5"/>
+      <line x1="38" y1="80" x2="82" y2="80" stroke="#00e5ff55" stroke-width="1.5"/>
+      <text x="54" y="34" fill="#00e5ff" font-size="8" font-family="JetBrains Mono">O</text>
+      <text x="25" y="84" fill="#00ff88" font-size="7" font-family="JetBrains Mono">H</text>
+      <text x="87" y="84" fill="#00ff88" font-size="7" font-family="JetBrains Mono">H</text>
+    </svg>
+    <svg class="molecule mol-2" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="50" r="14" fill="#a78bfa22" stroke="#a78bfa" stroke-width="1.5"/>
+      <circle cx="80" cy="50" r="10" fill="#a78bfa22" stroke="#a78bfa" stroke-width="1.5"/>
+      <circle cx="120" cy="30" r="8" fill="#f9731622" stroke="#f97316" stroke-width="1.5"/>
+      <circle cx="120" cy="70" r="8" fill="#f9731622" stroke="#f97316" stroke-width="1.5"/>
+      <line x1="44" y1="50" x2="70" y2="50" stroke="#a78bfa55" stroke-width="2"/>
+      <line x1="44" y1="46" x2="70" y2="46" stroke="#a78bfa55" stroke-width="1"/>
+      <line x1="90" y1="42" x2="112" y2="34" stroke="#a78bfa55" stroke-width="1.5"/>
+      <line x1="90" y1="58" x2="112" y2="66" stroke="#a78bfa55" stroke-width="1.5"/>
+      <text x="22" y="54" fill="#a78bfa" font-size="9" font-family="JetBrains Mono">Na</text>
+      <text x="74" y="54" fill="#a78bfa" font-size="8" font-family="JetBrains Mono">Cl</text>
+      <text x="115" y="34" fill="#f97316" font-size="7" font-family="JetBrains Mono">e</text>
+      <text x="115" y="74" fill="#f97316" font-size="7" font-family="JetBrains Mono">e</text>
+    </svg>
+    <svg class="molecule mol-3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="16" fill="#00e5ff11" stroke="#00e5ff" stroke-width="1.5"/>
+      <circle cx="50" cy="15" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
+      <circle cx="82" cy="68" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
+      <circle cx="18" cy="68" r="8" fill="#00ff8822" stroke="#00ff88" stroke-width="1.5"/>
+      <line x1="50" y1="34" x2="50" y2="23" stroke="#00e5ff55" stroke-width="1.5"/>
+      <line x1="62" y1="60" x2="74" y2="63" stroke="#00e5ff55" stroke-width="1.5"/>
+      <line x1="38" y1="60" x2="26" y2="63" stroke="#00e5ff55" stroke-width="1.5"/>
+      <text x="44" y="54" fill="#00e5ff" font-size="8" font-family="JetBrains Mono">C</text>
+      <text x="46" y="19" fill="#00ff88" font-size="7" font-family="JetBrains Mono">H</text>
+    </svg>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Навигация -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <span class="logo-icon">⬡</span>
+      <span>ChemLab</span>
+    </div>
+    <div class="nav-links">
+      <a href="#reactions">Реакции</a>
+      <a href="#elements">Элементы</a>
+      <a href="#access">Доступ</a>
+    </div>
+  </nav>
+
+  <!-- Герой -->
+  <section class="hero">
+    <div class="hero-tag">Химия — точная наука</div>
+    <h1 class="hero-title">
+      Мир молекул<br>
+      <span class="gradient-text">и реакций</span>
+    </h1>
+    <p class="hero-sub">
+      Интерактивная платформа для изучения химии. Регистрируйся через Telegram
+      и получи доступ к лабораторным материалам, реакциям и базе элементов.
+    </p>
+    <div class="hero-formulas">
+      <span class="formula">H<sub>2</sub>O</span>
+      <span class="formula-sep">+</span>
+      <span class="formula">CO<sub>2</sub></span>
+      <span class="formula-sep">→</span>
+      <span class="formula">H<sub>2</sub>CO<sub>3</sub></span>
+    </div>
+    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="btn-primary">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.92.44l-2.56-1.88-1.24 1.18c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.82 14.6 5.3 13.82c-.56-.18-.56-.56.12-.82l8.96-3.46c.46-.16.86.1.7.8z" fill="#fff"/></svg>
+      Зарегистрироваться в Telegram
+    </a>
+    <p class="hero-hint">Уже есть код? <a href="#access" class="hint-link">Введите ниже</a></p>
+  </section>
+
+  <!-- Реакции -->
+  <section class="section" id="reactions">
+    <div class="section-label">Химические реакции</div>
+    <h2 class="section-title">Основные типы реакций</h2>
+    <div class="cards-grid">
+
+      <div class="card card-glow-cyan">
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <div class="card-formula">CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O</div>
+        <h3>Горение</h3>
+        <p>Реакция вещества с кислородом с выделением теплоты и света. Продукты: CO₂ и H₂O.</p>
+        <div class="card-tag">Экзотермическая</div>
+      </div>
+
+      <div class="card card-glow-green">
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="card-formula">6CO<sub>2</sub> + 6H<sub>2</sub>O → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub></div>
+        <h3>Фотосинтез</h3>
+        <p>Превращение CO₂ и воды в глюкозу под действием света. Основа жизни на Земле.</p>
+        <div class="card-tag">Эндотермическая</div>
+      </div>
+
+      <div class="card card-glow-purple">
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="card-formula">NaCl → Na<sup>+</sup> + Cl<sup>-</sup></div>
+        <h3>Диссоциация</h3>
+        <p>Распад ионных соединений на ионы при растворении в воде.</p>
+        <div class="card-tag">Ионная</div>
+      </div>
+
+      <div class="card card-glow-orange">
+        <div class="card-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/></svg>
+        </div>
+        <div class="card-formula">Fe + CuSO<sub>4</sub> → FeSO<sub>4</sub> + Cu</div>
+        <h3>Замещение</h3>
+        <p>Более активный металл вытесняет менее активный из раствора его соли.</p>
+        <div class="card-tag">Окислительно-восстановительная</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Элементы -->
+  <section class="section" id="elements">
+    <div class="section-label">Периодическая таблица</div>
+    <h2 class="section-title">Интересные элементы</h2>
+    <div class="elements-grid">
+      <div class="element" style="--el-color: #00e5ff">
+        <div class="el-number">1</div>
+        <div class="el-symbol">H</div>
+        <div class="el-name">Водород</div>
+        <div class="el-mass">1.008</div>
+        <div class="el-fact">Самый лёгкий и распространённый элемент во Вселенной</div>
+      </div>
+      <div class="element" style="--el-color: #a78bfa">
+        <div class="el-number">6</div>
+        <div class="el-symbol">C</div>
+        <div class="el-name">Углерод</div>
+        <div class="el-mass">12.011</div>
+        <div class="el-fact">Основа органической химии и всей жизни на Земле</div>
+      </div>
+      <div class="element" style="--el-color: #00ff88">
+        <div class="el-number">8</div>
+        <div class="el-symbol">O</div>
+        <div class="el-name">Кислород</div>
+        <div class="el-mass">15.999</div>
+        <div class="el-fact">Необходим для дыхания и горения</div>
+      </div>
+      <div class="element" style="--el-color: #f97316">
+        <div class="el-number">11</div>
+        <div class="el-symbol">Na</div>
+        <div class="el-name">Натрий</div>
+        <div class="el-mass">22.990</div>
+        <div class="el-fact">Реагирует с водой, выделяя водород</div>
+      </div>
+      <div class="element" style="--el-color: #ec4899">
+        <div class="el-number">79</div>
+        <div class="el-symbol">Au</div>
+        <div class="el-name">Золото</div>
+        <div class="el-mass">196.97</div>
+        <div class="el-fact">Не окисляется на воздухе, проводник тока</div>
+      </div>
+      <div class="element" style="--el-color: #06b6d4">
+        <div class="el-number">26</div>
+        <div class="el-symbol">Fe</div>
+        <div class="el-name">Железо</div>
+        <div class="el-mass">55.845</div>
+        <div class="el-fact">Самый распространённый металл в земной коре</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Доступ -->
+  <section class="section access-section" id="access">
+    <div class="section-label">Лаборатория</div>
+    <h2 class="section-title">Введите код доступа</h2>
+    <p class="access-sub">Получите код в Telegram боте <strong>@kliopon_bot</strong> после регистрации</p>
+
+    <div class="code-form">
+      <input
+        type="text"
+        id="codeInput"
+        class="code-input"
+        placeholder="000000"
+        maxlength="6"
+        inputmode="numeric"
+      >
+      <button class="btn-verify" onclick="verifyCode()">
+        <span id="btn-text">Войти в лабораторию</span>
+      </button>
+      <p id="code-error" class="code-error" style="display:none">Неверный код. Проверьте и попробуйте снова.</p>
+    </div>
+
+    <div class="or-divider">
+      <span>или</span>
+    </div>
+
+    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="btn-secondary">
+      Получить код в Telegram
+    </a>
+  </section>
+
+  <!-- Лаборатория (скрытый контент) -->
+  <section class="lab-section" id="lab" style="display:none">
+    <div class="lab-header">
+      <div class="lab-badge">Доступ получен</div>
+      <h2>Добро пожаловать в лабораторию</h2>
+      <p>Здесь вы найдёте расширенные материалы по химии</p>
+    </div>
+    <div class="lab-grid">
+      <div class="lab-card">
+        <div class="lab-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4M16 3h5v5M10 14L21 3"/></svg>
+        </div>
+        <h4>Таблица Менделеева</h4>
+        <p>Полная интерактивная периодическая таблица со свойствами всех 118 элементов</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+        </div>
+        <h4>База реакций</h4>
+        <p>Более 500 химических реакций с описанием условий и механизмов протекания</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M10 2l1.5 4.5L16 8l-4.5 1.5L10 14l-1.5-4.5L4 8l4.5-1.5L10 2zM20 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/></svg>
+        </div>
+        <h4>Задачи и тесты</h4>
+        <p>Практические задачи по всем разделам химии с решениями</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="logo-icon">⬡</span>
+      <span>ChemLab</span>
+    </div>
+    <p>Химия открыта для всех</p>
+    <a href="https://t.me/kliopon_bot" target="_blank" class="footer-tg">@kliopon_bot</a>
+  </footer>
+
+  <script>
+    const SUPABASE_URL = 'https://oalmsumggrsotmkfusen.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_byBssnfFF7khESuRDOei-w_FwRJ99oz';
+
+    async function verifyCode() {
+      const code = document.getElementById('codeInput').value.trim();
+      const btnText = document.getElementById('btn-text');
+      const errorEl = document.getElementById('code-error');
+
+      if (code.length !== 6) {
+        errorEl.textContent = 'Введите 6-значный код';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      btnText.textContent = 'Проверяем...';
+      errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch(
+          `${SUPABASE_URL}/rest/v1/registrations?access_code=eq.${code}&select=id,full_name`,
+          {
+            headers: {
+              'apikey': SUPABASE_KEY,
+              'Authorization': `Bearer ${SUPABASE_KEY}`
+            }
+          }
+        );
+        const data = await res.json();
+
+        if (data && data.length > 0) {
+          document.getElementById('access').style.display = 'none';
+          const lab = document.getElementById('lab');
+          lab.style.display = 'block';
+          lab.scrollIntoView({ behavior: 'smooth' });
+          localStorage.setItem('chemlab_code', code);
+        } else {
+          errorEl.textContent = 'Неверный код. Проверьте и попробуйте снова.';
+          errorEl.style.display = 'block';
+          btnText.textContent = 'Войти в лабораторию';
+        }
+      } catch (e) {
+        errorEl.textContent = 'Ошибка соединения. Попробуйте позже.';
+        errorEl.style.display = 'block';
+        btnText.textContent = 'Войти в лабораторию';
+      }
+    }
+
+    // Автовход если код уже есть
+    window.addEventListener('load', () => {
+      const saved = localStorage.getItem('chemlab_code');
+      if (saved) {
+        document.getElementById('codeInput').value = saved;
+        verifyCode();
+      }
+    });
+
+    // Только цифры в поле
+    document.getElementById('codeInput').addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+  </script>
+
 </body>
 </html>
