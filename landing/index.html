@@ -31,8 +31,8 @@
     <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="nav-cta">Получить доступ</a>
   </nav>
 
-  <!-- Герой -->
-  <section class="hero">
+  <!-- Герой (скрывается после входа) -->
+  <section class="hero" id="hero-register">
     <div class="hero-tag">Химия — точная наука</div>
     <h1 class="hero-title">Мир молекул<br><span class="gradient-text">и реакций</span></h1>
     <p class="hero-sub">Интерактивная платформа по химии и биологии. Зарегистрируйся через Telegram и открой полную базу знаний: таблицу Менделеева, ОВР, таблицу растворимости и биохимию.</p>
@@ -48,6 +48,27 @@
       Зарегистрироваться в Telegram
     </a>
     <p class="hero-hint">Уже есть код? <a href="#access" class="hint-link">Войти в лабораторию</a></p>
+  </section>
+
+  <!-- Модальное окно для публичных элементов -->
+  <div id="pubModal" style="display:none;position:fixed;inset:0;background:rgba(6,8,16,0.85);backdrop-filter:blur(8px);z-index:1000;align-items:center;justify-content:center;padding:20px">
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:32px;max-width:440px;width:100%;position:relative;animation:fadeIn 0.2s ease">
+      <button onclick="closePubModal()" style="position:absolute;top:16px;right:16px;background:transparent;border:none;color:var(--muted);font-size:24px;cursor:pointer;line-height:1">×</button>
+      <div id="pubModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Герой для залогиненных (скрыт по умолчанию) -->
+  <section class="hero hero-logged" id="hero-logged" style="display:none">
+    <div class="hero-tag" style="color:var(--green);border-color:var(--green)">Лаборатория открыта</div>
+    <h1 class="hero-title">Добро пожаловать,<br><span class="gradient-text" id="hero-username">участник</span>!</h1>
+    <p class="hero-sub">Все материалы доступны. Используй навигацию для перехода к разделам.</p>
+    <div class="hero-nav-pills">
+      <a href="#periodicTable" class="pill">Таблица Менделеева</a>
+      <a href="#solubilityTable" class="pill">Растворимость</a>
+      <a href="#bio-full" class="pill">Биология</a>
+      <a href="#ege" class="pill">ЕГЭ реакции</a>
+    </div>
   </section>
 
   <!-- Привилегии регистрации -->
@@ -157,9 +178,30 @@
       <div class="card card-glow-orange">
         <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></div>
         <div class="card-formula">BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> → BaSO<sub>4</sub>↓ + 2NaCl</div>
-        <h3>Осадок</h3>
-        <p>Реакция обмена с образованием нерастворимого осадка BaSO₄.</p>
+        <h3>Осадок (ионный обмен)</h3>
+        <p>Ba²⁺ + SO₄²⁻ → BaSO₄↓ — сокращённое ионное уравнение. Реакция протекает т.к. образуется осадок.</p>
         <div class="card-tag">Ионный обмен</div>
+      </div>
+      <div class="card card-glow-cyan">
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <div class="card-formula">Na<sub>2</sub>CO<sub>3</sub> + 2HCl → 2NaCl + H<sub>2</sub>O + CO<sub>2</sub>↑</div>
+        <h3>Выделение газа (ионный обмен)</h3>
+        <p>CO₃²⁻ + 2H⁺ → H₂O + CO₂↑ — реакция идёт т.к. образуется газ CO₂.</p>
+        <div class="card-tag">Ионный обмен</div>
+      </div>
+      <div class="card card-glow-green">
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="card-formula">N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub></div>
+        <h3>Обратимая / синтез</h3>
+        <p>Реакция соединения. Идёт в обоих направлениях — устанавливается химическое равновесие (принцип Ле Шателье).</p>
+        <div class="card-tag">Соединение</div>
+      </div>
+      <div class="card card-glow-purple">
+        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <div class="card-formula">Ca(HCO<sub>3</sub>)<sub>2</sub> →<sup>t°</sup> CaCO<sub>3</sub>↓ + H<sub>2</sub>O + CO<sub>2</sub>↑</div>
+        <h3>Разложение при нагреве</h3>
+        <p>Жёсткость воды. Временная жёсткость устраняется кипячением — CaCO₃ выпадает в осадок (накипь).</p>
+        <div class="card-tag">Разложение</div>
       </div>
     </div>
   </section>
@@ -169,12 +211,12 @@
     <div class="section-label">Периодическая таблица</div>
     <h2 class="section-title">Ключевые элементы <span class="muted-text">— полная таблица после входа</span></h2>
     <div class="elements-grid">
-      <div class="element" style="--el-color:#00e5ff"><div class="el-number">1</div><div class="el-symbol">H</div><div class="el-name">Водород</div><div class="el-mass">1.008</div><div class="el-fact">Самый лёгкий элемент во Вселенной, основа звёзд</div></div>
-      <div class="element" style="--el-color:#a78bfa"><div class="el-number">6</div><div class="el-symbol">C</div><div class="el-name">Углерод</div><div class="el-mass">12.011</div><div class="el-fact">Основа органики: алмаз, графит, фуллерены</div></div>
-      <div class="element" style="--el-color:#00ff88"><div class="el-number">8</div><div class="el-symbol">O</div><div class="el-name">Кислород</div><div class="el-mass">15.999</div><div class="el-fact">Необходим для дыхания и горения</div></div>
-      <div class="element" style="--el-color:#f97316"><div class="el-number">11</div><div class="el-symbol">Na</div><div class="el-name">Натрий</div><div class="el-mass">22.990</div><div class="el-fact">Реагирует с водой, выделяя H₂ и тепло</div></div>
-      <div class="element" style="--el-color:#ec4899"><div class="el-number">79</div><div class="el-symbol">Au</div><div class="el-name">Золото</div><div class="el-mass">196.97</div><div class="el-fact">Не окисляется, лучший проводник</div></div>
-      <div class="element" style="--el-color:#06b6d4"><div class="el-number">26</div><div class="el-symbol">Fe</div><div class="el-name">Железо</div><div class="el-mass">55.845</div><div class="el-fact">Самый распространённый металл коры</div></div>
+      <div class="element" style="--el-color:#00e5ff" onclick="showPublicElement(1,'H','Водород','1.008','nonmetal','Самый лёгкий и распространённый элемент во Вселенной. Основа звёзд (термоядерный синтез). Газ без цвета и запаха. Горючий.')"><div class="el-number">1</div><div class="el-symbol">H</div><div class="el-name">Водород</div><div class="el-mass">1.008</div><div class="el-fact">Нажми для подробностей</div></div>
+      <div class="element" style="--el-color:#a78bfa" onclick="showPublicElement(6,'C','Углерод','12.011','nonmetal','Основа всей органической жизни. Существует в трёх аллотропных формах: алмаз (твёрдый), графит (мягкий), фуллерены (сферические молекулы).')"><div class="el-number">6</div><div class="el-symbol">C</div><div class="el-name">Углерод</div><div class="el-mass">12.011</div><div class="el-fact">Нажми для подробностей</div></div>
+      <div class="element" style="--el-color:#00ff88" onclick="showPublicElement(8,'O','Кислород','15.999','nonmetal','21% атмосферы Земли. Необходим для дыхания и горения. Самый распространённый элемент в земной коре (47%). Газ без цвета.')"><div class="el-number">8</div><div class="el-symbol">O</div><div class="el-name">Кислород</div><div class="el-mass">15.999</div><div class="el-fact">Нажми для подробностей</div></div>
+      <div class="element" style="--el-color:#f97316" onclick="showPublicElement(11,'Na','Натрий','22.990','alkali','Щелочной металл. Бурно реагирует с водой: 2Na+2H₂O → 2NaOH+H₂↑. Важен для нервных импульсов. NaCl — поваренная соль.')"><div class="el-number">11</div><div class="el-symbol">Na</div><div class="el-name">Натрий</div><div class="el-mass">22.990</div><div class="el-fact">Нажми для подробностей</div></div>
+      <div class="element" style="--el-color:#ec4899" onclick="showPublicElement(79,'Au','Золото','196.97','transition','Благородный металл. Не окисляется на воздухе. Растворяется только в царской водке. Используется в электронике и ювелирном деле.')"><div class="el-number">79</div><div class="el-symbol">Au</div><div class="el-name">Золото</div><div class="el-mass">196.97</div><div class="el-fact">Нажми для подробностей</div></div>
+      <div class="element" style="--el-color:#06b6d4" onclick="showPublicElement(26,'Fe','Железо','55.845','transition','Самый распространённый металл в земной коре. Основа стали. Реагирует с разб. кислотами. Пассивируется в конц. HNO₃ и H₂SO₄.')"><div class="el-number">26</div><div class="el-symbol">Fe</div><div class="el-name">Железо</div><div class="el-mass">55.845</div><div class="el-fact">Нажми для подробностей</div></div>
     </div>
     <div class="section-cta">
       <p>Хочешь видеть все 118 элементов с интерактивными свойствами?</p>
@@ -1235,22 +1277,45 @@
     }
 
     function unlockLab(name) {
+      // Скрыть секцию регистрации, показать приветственный hero
+      document.getElementById('hero-register').style.display = 'none';
       document.getElementById('access').style.display = 'none';
       document.querySelectorAll('.locked-card').forEach(el => el.style.display = 'none');
-      const lab = document.getElementById('lab-content');
-      lab.style.display = 'block';
+      document.querySelectorAll('.perks-section').forEach(el => el.style.display = 'none');
 
-      // Показать приветствие
+      // Показать hero для залогиненных
+      const heroLogged = document.getElementById('hero-logged');
+      heroLogged.style.display = 'flex';
+      if (name) {
+        document.getElementById('hero-username').textContent = name.split(' ')[0];
+      }
+
+      // Welcome баннер
       const welcome = document.getElementById('welcome-banner');
       if (welcome && name) {
         document.getElementById('welcome-name').textContent = name;
         welcome.style.display = 'flex';
       }
 
-      lab.scrollIntoView({ behavior: 'smooth' });
+      // Показать lab content
+      const lab = document.getElementById('lab-content');
+      lab.style.display = 'block';
+
+      // Обновить навигацию
+      const navCta = document.querySelector('.nav-cta');
+      if (navCta) {
+        navCta.textContent = 'Лаборатория ✓';
+        navCta.style.background = 'rgba(0,255,136,0.15)';
+        navCta.style.borderColor = 'var(--green)';
+        navCta.style.color = 'var(--green)';
+        navCta.href = '#lab-content';
+      }
+
       buildPeriodicTable();
       buildSolubility();
       buildActivitySeries();
+
+      setTimeout(() => lab.scrollIntoView({ behavior: 'smooth' }), 300);
     }
 
     // Автовход
@@ -1266,9 +1331,44 @@
       this.value = this.value.replace(/[^0-9]/g, '');
     });
 
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key==='Escape') { closeModal(); closePubModal(); } });
     document.getElementById('elementModal')?.addEventListener('click', function(e) {
       if(e.target === this) closeModal();
+    });
+
+    // ===== ПУБЛИЧНЫЕ ЭЛЕМЕНТЫ — МОДАЛЬНОЕ ОКНО =====
+    const CAT_NAMES = {
+      nonmetal:'Неметалл', alkali:'Щелочной металл', alkaline:'Щелочноземельный',
+      transition:'Переходный металл', post:'Постпереходный металл',
+      metalloid:'Металлоид', halogen:'Галоген', noble:'Благородный газ'
+    };
+    const CAT_COLORS_PUB = {
+      nonmetal:'#a78bfa', alkali:'#ef4444', alkaline:'#f97316',
+      transition:'#06b6d4', post:'#3b82f6', metalloid:'#84cc16',
+      halogen:'#ec4899', noble:'#6366f1'
+    };
+
+    function showPublicElement(num, sym, name, mass, cat, desc) {
+      const color = CAT_COLORS_PUB[cat] || '#64748b';
+      document.getElementById('pubModalContent').innerHTML = `
+        <div style="display:flex;align-items:center;gap:20px;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:20px;border-color:${color}">
+          <div style="font-size:14px;color:var(--muted);font-family:var(--mono)">${num}</div>
+          <div style="font-size:56px;font-weight:700;color:${color};text-shadow:0 0 20px ${color};line-height:1">${sym}</div>
+          <div><div style="font-size:22px;font-weight:700">${name}</div><div style="font-size:13px;color:var(--muted);font-family:var(--mono)">${mass} а.е.м.</div></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+          <span style="font-size:12px;padding:4px 12px;border-radius:20px;background:${color}20;border:1px solid ${color};color:${color}">${CAT_NAMES[cat]||cat}</span>
+          <span style="font-size:12px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted)">Атомная масса: ${mass}</span>
+        </div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;background:rgba(255,255,255,0.03);padding:14px;border-radius:10px">${desc}</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:14px;text-align:center">Войдите в лабораторию чтобы увидеть все 118 элементов</p>`;
+      document.getElementById('pubModal').style.display = 'flex';
+    }
+    function closePubModal() {
+      document.getElementById('pubModal').style.display = 'none';
+    }
+    document.getElementById('pubModal')?.addEventListener('click', function(e) {
+      if(e.target === this) closePubModal();
     });
   </script>
 </body>
