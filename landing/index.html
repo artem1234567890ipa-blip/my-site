@@ -19,17 +19,93 @@
     <div class="grid-overlay"></div>
   </div>
 
-  <!-- Навигация -->
+  <!-- Навигация с дропдаунами -->
   <nav class="nav">
     <div class="nav-logo"><span class="logo-icon">⬡</span><span>ChemLab</span></div>
     <div class="nav-links">
-      <a href="#reactions">Реакции</a>
-      <a href="#elements">Элементы</a>
-      <a href="#biology">Биология</a>
-      <a href="#access">Войти</a>
+
+      <!-- Химия -->
+      <div class="nav-item" tabindex="0">
+        <a href="#reactions" class="nav-link">Химия <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="nav-dropdown">
+          <div class="drop-col">
+            <div class="drop-label">Реакции</div>
+            <a class="drop-item" href="#reactions">Горение и разложение</a>
+            <a class="drop-item" href="#reactions">Нейтрализация</a>
+            <a class="drop-item" href="#reactions">Ионный обмен</a>
+            <a class="drop-item" href="#reactions">Замещение</a>
+          </div>
+          <div class="drop-col">
+            <div class="drop-label">Углублённо (лаб.)</div>
+            <a class="drop-item drop-locked" href="#access">ОВР реакции 🔒</a>
+            <a class="drop-item drop-locked" href="#access">ЕГЭ 2026 реакции 🔒</a>
+            <a class="drop-item drop-locked" href="#access">Ряд активности 🔒</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Элементы -->
+      <div class="nav-item" tabindex="0">
+        <a href="#elements" class="nav-link">Элементы <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="nav-dropdown">
+          <div class="drop-col">
+            <div class="drop-label">Превью</div>
+            <a class="drop-item" href="#elements">H — Водород</a>
+            <a class="drop-item" href="#elements">C — Углерод</a>
+            <a class="drop-item" href="#elements">O — Кислород</a>
+            <a class="drop-item" href="#elements">Fe — Железо</a>
+          </div>
+          <div class="drop-col">
+            <div class="drop-label">Лаборатория 🔒</div>
+            <a class="drop-item drop-locked" href="#access">Все 118 элементов</a>
+            <a class="drop-item drop-locked" href="#access">Таблица растворимости</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Биология -->
+      <div class="nav-item" tabindex="0">
+        <a href="#biology" class="nav-link">Биология <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="nav-dropdown drop-wide">
+          <div class="drop-col">
+            <div class="drop-label">Основы</div>
+            <a class="drop-item" href="#biology">ДНК и РНК</a>
+            <a class="drop-item" href="#biology">АТФ и энергетика</a>
+            <a class="drop-item" href="#biology">Клеточное дыхание</a>
+          </div>
+          <div class="drop-col">
+            <div class="drop-label">Разделы 🔒</div>
+            <a class="drop-item drop-locked" href="#access">Цитология</a>
+            <a class="drop-item drop-locked" href="#access">Генетика</a>
+            <a class="drop-item drop-locked" href="#access">Анатомия</a>
+          </div>
+          <div class="drop-col">
+            <div class="drop-label">Ещё 🔒</div>
+            <a class="drop-item drop-locked" href="#access">Ботаника</a>
+            <a class="drop-item drop-locked" href="#access">Экология</a>
+            <a class="drop-item drop-locked" href="#access">Эволюция</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#access" class="nav-link">Войти</a>
     </div>
-    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="nav-cta">Получить доступ</a>
+    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="nav-cta" id="navCta">Получить доступ</a>
+
+    <!-- Мобильное меню -->
+    <button class="nav-burger" onclick="toggleMobileMenu()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Мобильное меню -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#reactions" onclick="toggleMobileMenu()">Реакции</a>
+    <a href="#elements" onclick="toggleMobileMenu()">Элементы</a>
+    <a href="#biology" onclick="toggleMobileMenu()">Биология</a>
+    <a href="#access" onclick="toggleMobileMenu()">Войти</a>
+    <a href="https://t.me/kliopon_bot?start=register" target="_blank" class="mobile-cta">Получить доступ в Telegram</a>
+  </div>
 
   <!-- Герой (скрывается после входа) -->
   <section class="hero" id="hero-register">
@@ -1329,6 +1405,20 @@
 
     document.getElementById('codeInput').addEventListener('input', function() {
       this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    // ===== МОБИЛЬНОЕ МЕНЮ =====
+    function toggleMobileMenu() {
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('open');
+    }
+    // Закрыть меню при клике вне
+    document.addEventListener('click', e => {
+      const menu = document.getElementById('mobileMenu');
+      const burger = document.querySelector('.nav-burger');
+      if (menu && !menu.contains(e.target) && !burger.contains(e.target)) {
+        menu.classList.remove('open');
+      }
     });
 
     document.addEventListener('keydown', e => { if(e.key==='Escape') { closeModal(); closePubModal(); } });
